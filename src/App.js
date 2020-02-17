@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import { createStore } from 'redux';
+import { wines } from './reducers';
+import WineForm from './containers/WineFormContainer';
+import WineList from './containers/WineListContainer';
+import { Provider } from 'react-redux';
+
+
+
+const store = createStore(wines);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={store}>
+        <WineForm />
+        <WineList />
+      </Provider>
     </div>
   );
 }
