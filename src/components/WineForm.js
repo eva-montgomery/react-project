@@ -16,7 +16,7 @@ export default class WineForm extends React.Component {
                      onChange={this._handleChange}
                     value={this.state.text}
                     /> 
-                    <input type="submit" value="GO!" />
+                    <input type="submit" value="Search!" />
                 </form>
 
             </div>

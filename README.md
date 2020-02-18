@@ -1,17 +1,17 @@
-# Requirements
-## No teams this time!
-## Redux is optional.
-## At least 5 components
-## At least 3 pieces of state
-## At least 1 API
-## Presentations on Monday, Feb 24 2020
+## Requirements
+- No teams this time!
+- Redux is optional.
+- At least 5 components
+- At least 3 pieces of state
+- At least 1 API
+- Presentations on Monday, Feb 24 2020
 
 ## Project Overview
-# An application that lets you add and rate wine
+- An application that lets you add and rate wine
 
-# API used: xxxx
+- API used: xxxx
 
-# Set-up
+- Set-up
 - npx create-react-app mantras
 - npm i redux react-redux
 
