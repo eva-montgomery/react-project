@@ -7,13 +7,14 @@ import Footer from './Footer';
 
 import { createStore } from 'redux';
 import { wines } from './reducers';
+import WineSearchBar from './WineSearchBar';
 import WineForm from './containers/WineFormContainer';
 import WineList from './containers/WineListContainer';
 import { Provider } from 'react-redux';
 
 
 
-const store = createStore(wines);
+const store = createStore(wines, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 function App() {
   return (

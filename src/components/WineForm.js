@@ -1,4 +1,5 @@
 import React from 'react';
+import WineRating from '../WineRating'
 
 export default class WineForm extends React.Component {
     constructor(props) {
@@ -46,10 +47,7 @@ export default class WineForm extends React.Component {
                     value={this.state.comment} placeholder="Comments"
                     />  
 
-                <input 
-                     onChange={this._handleRating}
-                    value={this.state.rating} placeholder="Rating"
-                    />  
+                <WineRating onChange={this._handleRating}/>
 
                     <input type="submit" value="Add a new wine" />
 
@@ -90,9 +88,9 @@ export default class WineForm extends React.Component {
         });
     }     
     
-    _handleRating = (event) => {
+    _handleRating = (rating) => {
         this.setState({
-            rating: event.target.value
+            rating
         });
     }        
 
