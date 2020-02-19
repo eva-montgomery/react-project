@@ -17,48 +17,58 @@ export default class WineForm extends React.Component {
     }
     render() {
         return (
-            <div> 
+            <div className="wine-form-container">
+            <div className="wine-box"> 
                 <form onSubmit={this._handleSubmit}>
-
-                <input 
+        
+                <input className="wine-input"
                      onChange={this._handleWine}
                     value={this.state.wine} placeholder="Wine"
                     /> 
-                <input 
+                <input className="wine-input"
                      onChange={this._handleType}
                     value={this.state.type} placeholder="Type"
                     />     
 
-                <input 
+                <input className="wine-input"
                      onChange={this._handlePrice}
                     value={this.state.price} placeholder="Price"
                     />  
-                <input 
+                <input className="wine-input"
                      onChange={this._handleShop}
                     value={this.state.shop} placeholder="Bought at"
                     />  
-                <input 
+                <input className="wine-input"
                      onChange={this._handleLabel}
                     value={this.state.label} placeholder="Wine Label"
                     />  
 
-                <input 
+                <input className="wine-input"
                      onChange={this._handleComment}
                     value={this.state.comment} placeholder="Comments"
                     />  
 
-                <WineRating onChange={this._handleRating}/>
+                <WineRating className="wine-glasses" onChange={this._handleRating}/>
 
-                    <input type="submit" value="Add a new wine" />
+                    <input type="submit" value="Add a new wine" className="wine-submit" />
+                    
 
                 </form>
 
+            </div>
             </div>
         )
     }
     _handleSubmit = (event) => {
         event.preventDefault();
         this.props.handleSubmit(this.state);
+        this.setState({wine: '',
+                type: '',
+                price: '',
+                shop: '',
+                label: '',
+                comments: '',
+                rating: '',})
     }
 
      

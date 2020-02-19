@@ -19,12 +19,16 @@ const store = createStore(wines, window.__REDUX_DEVTOOLS_EXTENSION__ && window._
 function App() {
   return (
     <div className="App">
+      <div className="content-container">
+
       <Header />
+
       <Content />
       <Provider store={store}>
         <WineForm />
         <WineList />
       </Provider>
+      </div>
       <Footer />
     </div>
   );

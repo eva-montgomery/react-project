@@ -1,35 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+
+
+}
 body {
   margin: 0;
-  background-image: url(/public/images/watercolour-1755757_1920.jpg);
+  height: 100%;
+  width: 100%;
+
+  
+
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+.content-container {
+  background-image: url(/images/watercolour-1755757_1920.jpg);
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
 }
 
 
 .header {
 display: flex;  
 justify-content: center;
-background-color: brown;
+background-color: rgb(235, 121, 121);
 font-family: fantasy;
-font-weight: bolder;
+font-weight: 900;
 padding-top: 20px;
 padding-bottom: 10px;
 }
 
+.main-content {
+  margin-top: 50px;
+}
+
+.wine-form-container {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wine-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(235, 121, 121);
+  background: rgb(235, 121, 121);
+  opacity: 0.85;
+  /* background-color: rgb(55, 175, 175); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 20px;
+  padding-top: 20px;
+  text-align: center;
+  border-radius: 15px;
+  padding-bottom: 20px;
+
+}
+
+.wine-input {
+ 
+  border-radius:26px;
+  display:inline-block;
+  border:1px solid #cccccc;
+  padding: 5px;
+  margin: 10px;
+  }
+
+
+ .wine-submit {
+  border-radius:15px;
+  background-color: rgb(196, 12, 54);
+  color: white;
+  padding: 5px;
+
+
+ } 
+.rated-wines-title {
+  justify-content: center;
+  font-size: 24px;
+  font-family: fantasy;
+  text-decoration: underline;
+  padding-top: 20px;
+  font-weight: 900;
+}
+
+.rated-wine-cards {
+  display: flex;
+  display:inline-block;
+  align-items: center;
+  flex: 1 0 auto;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  max-width: 200px;
+  min-width: 200px;
+  min-height: 200px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+.wine-edit {
+  border-radius:15px;
+  background-color: rgb(196, 12, 54);
+  color: white;
+}
+
+.wine-glasses {
+  justify-content: space-around;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .footer {
+
 justify-content: center;
-background-color: brown;
+background-color: rgb(235, 121, 121);
 font-family: fantasy;
 font-weight: bolder;
 padding-top: 10px;
 padding-bottom: 10px;
+
 }

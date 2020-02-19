@@ -1,11 +1,13 @@
 import React from 'react';
+import WineList from './Wine-List'
+
 
 class WineEditor extends React.Component {
 
     constructor(props) {
         super(props);
 
-        console.log('Option to edit the wine list');
+        console.log('Option to edit a wine in the list');
         this.state = {
             changedWine: {}
         }
