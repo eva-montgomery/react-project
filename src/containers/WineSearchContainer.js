@@ -17,18 +17,20 @@ import Axios from 'axios';
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleClick: async (query) => {
+        handleSubmit: async (query) => {
             dispatch(actionLoading(true));
-            // const result = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=artist:"${query}"`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-           const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/`, {
+            console.log(query)
+      
+           const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${query}`, {
                headers: {
                 Authorization: "Token 17cfc1a827957c96b7b2284ab656b740a90e358c",
                 'X-Requested-With': 'XMLHttpRequest' 
                }
            })
            console.log(results);
+           console.log(results.data.results)
             dispatch(actionSearch('cabernet'));
-            dispatch(actionResults(results.data.objectIDs));
+            dispatch(actionResults(results.data.results));
             dispatch(actionLoading(false));
         }
     }

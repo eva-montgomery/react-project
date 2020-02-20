@@ -19,10 +19,11 @@ export default function WineList({
                     <li key={i}>Bought at: {m.shop}
                     </li>
                     
+                   
+                    <li key={i}>Comments: {m.comment}
+                    </li>
                     <li key={i}><div className="label-container">Wine Label: <img src={m.label}/>
                     </div>
-                    </li>
-                    <li key={i}>Comments: {m.comment}
                     </li>
                     <li key={i}>
                         <StarRatingComponent className="wine-glasses"
