@@ -38,11 +38,14 @@ export default class WineForm extends React.Component {
                      onChange={this._handleShop}
                     value={this.state.shop} placeholder="Bought at"
                     />  
-                <input className="wine-input"
-                     onChange={this._handleLabel}
-                    value={this.state.label} placeholder="Wine Label"
-                    />  
 
+                   <label for="wine-input">Wine Label</label>
+                <input type="file" className="wine-input" 
+                       accept="image/png, image/jpeg"
+
+                     onChange={this._handleLabel}
+                    // value={this.state.label} placeholder="Wine Label"
+                    />  
                 <input className="wine-input"
                      onChange={this._handleComment}
                     value={this.state.comment} placeholder="Comments"
@@ -95,7 +98,8 @@ export default class WineForm extends React.Component {
     }    
     _handleLabel = (event) => {
         this.setState({
-            label: event.target.value
+            // label: event.target.value
+            label: URL.createObjectURL(event.target.files[0])
         });
     }     
     

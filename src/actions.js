@@ -1,5 +1,4 @@
 export const ADD_WINE = 'ADD_WINE';
-export const WINE_RATING = 'WINE_RATING';
 
 export const SEARCH = 'SEARCH';
 export const SELECT = 'SELECT';
@@ -49,14 +48,5 @@ export function actionSelect(id) {
         }
     }
 }
-
-// export function actionWineRating() {
-//     return ({
-//         type: WINE_RATING,
-//         payload: {
-//             XX
-//         }
-//     })
-// }
 
 

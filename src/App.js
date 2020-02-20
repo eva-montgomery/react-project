@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 import { createStore } from 'redux';
 import { wines } from './reducers';
-import WineSearch from './components/WineSearch';
+import WineSearch from './containers/WineSearchContainer';
 import WineSearchBar from './WineSearchBar';
 import WineForm from './containers/WineFormContainer';
 import WineList from './containers/WineListContainer';
