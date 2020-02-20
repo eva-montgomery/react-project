@@ -10,7 +10,7 @@ export default class WineForm extends React.Component {
             price: '',
             shop: '',
             label: '',
-            comments: '',
+            comment: '',
             rating: '',
 
         };
@@ -62,12 +62,13 @@ export default class WineForm extends React.Component {
     _handleSubmit = (event) => {
         event.preventDefault();
         this.props.handleSubmit(this.state);
-        this.setState({wine: '',
+        this.setState({
+                wine: '',
                 type: '',
                 price: '',
                 shop: '',
                 label: '',
-                comments: '',
+                comment: '',
                 rating: '',})
     }
 

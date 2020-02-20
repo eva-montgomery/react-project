@@ -1,5 +1,5 @@
 import React from 'react';
-import WineList from './Wine-List'
+import WineList from '../WineList'
 
 
 class WineEditor extends React.Component {

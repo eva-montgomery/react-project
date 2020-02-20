@@ -7,9 +7,11 @@ import Footer from './Footer';
 
 import { createStore } from 'redux';
 import { wines } from './reducers';
+import WineSearch from './components/WineSearch';
 import WineSearchBar from './WineSearchBar';
 import WineForm from './containers/WineFormContainer';
 import WineList from './containers/WineListContainer';
+
 import { Provider } from 'react-redux';
 
 
@@ -21,12 +23,15 @@ function App() {
     <div className="App">
       <div className="content-container">
 
-      <Header />
+      <Header 
+      />
 
       <Content />
       <Provider store={store}>
         <WineForm />
+
         <WineList />
+        <WineSearch />
       </Provider>
       </div>
       <Footer />

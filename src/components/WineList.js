@@ -7,9 +7,11 @@ export default function WineList({
 }) {
     return (
         <div>
-            <div className="rated-wines-title">My rated wines:</div>
             {
                 wines.map( (m, i) => (
+                    <div>
+                    <div className="rated-wines-title">My rated wines:</div>
+            
             <div className="rated-wine-cards"> <ul> 
                     <div key={i}>{m.wine}
                     <li key={i}>Type: {m.type}
@@ -36,8 +38,10 @@ export default function WineList({
                     </div>
         </ul>
         </div>
+        </div>
                 ))
             }
+            
         </div>
     );
 }
