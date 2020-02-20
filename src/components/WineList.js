@@ -35,6 +35,7 @@ export default function WineList({
               renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                     </li>
                     <input type="submit" value="Edit" className="wine-edit" />
+                    {/* <input type="button" value="Delete" className="wine-edit" onClick={this._handleDel} /> */}
 
                     </div>
         </ul>
@@ -44,4 +45,7 @@ export default function WineList({
         </div>
     );
 }
+
+
     
+// _handleDel = () => {}

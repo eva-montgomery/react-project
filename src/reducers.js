@@ -1,5 +1,6 @@
 import {
     ADD_WINE,
+    DEL_WINE,
     SEARCH, 
     RESULTS,
     SELECT,
@@ -23,6 +24,18 @@ export function wines(state=[], action) {
     return newState;
 }
 
+export function DelWines(state=[], action) {
+    const newState = [...state];
+
+    switch(action.type) {
+        case DEL_WINE:
+            newState.splice(0, 1);
+            break;
+        default:
+            break;    
+    }
+    return newState;
+}
 
 
 const defaultState = {
