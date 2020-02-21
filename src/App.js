@@ -5,17 +5,18 @@ import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
 
-import { createStore } from 'redux';
-import { wines } from './reducers';
+import { createStore, combineReducers } from 'redux';
+import { wines, wineSearch } from './reducers';
 import WineSearch from './containers/WineSearchContainer';
 import WineForm from './containers/WineFormContainer';
 import WineList from './containers/WineListContainer';
+import WineSearchResults from './containers/WineSearchContainer';
 
 import { Provider } from 'react-redux';
 
 
-
-const store = createStore(wines, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const rootReducer = combineReducers({wines, wineSearch})
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 function App() {
   return (

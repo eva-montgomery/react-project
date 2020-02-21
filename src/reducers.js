@@ -3,7 +3,6 @@ import {
     DEL_WINE,
     SEARCH, 
     RESULTS,
-    SELECT,
     LOADING
 
 } from "./actions"
@@ -18,24 +17,16 @@ export function wines(state=[], action) {
         case ADD_WINE:
             newState.push(action.payload.wine);
             break;
-        default:
-            break;    
-    }
-    return newState;
-}
-
-export function DelWines(state=[], action) {
-    const newState = [...state];
-
-    switch(action.type) {
         case DEL_WINE:
-            newState.splice(0, 1);
+            newState.splice(action.payload.index, 1);
             break;
         default:
             break;    
     }
     return newState;
 }
+
+
 
 
 const defaultState = {
@@ -60,9 +51,9 @@ export function wineSearch(state=defaultState, action) {
                 ...state,
                 isLoading: action.payload.isLoading
             }
-        case SELECT:
+        default:
             return {
                 ...state,
-            }
+            }    
     }
 }

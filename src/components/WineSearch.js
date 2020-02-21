@@ -1,5 +1,7 @@
   
 import React from 'react';
+import Axios from 'axios';
+
 
 // export default function WineSearch({
 //     handleClick
@@ -14,7 +16,8 @@ export default class WineSearch extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: ''
+            text: '',
+            wineSearchResults: []
         };
     }
     render() {
@@ -37,12 +40,25 @@ export default class WineSearch extends React.Component {
          
         )
     }
-    _handleSubmit = (event) => {
+    _handleSubmit = async (event) => {
         event.preventDefault();
-        this.props.handleSubmit(this.state.text)
-        this.setState({
-            text: ''
+        // this.props.handleSubmit(this.state.text)
+        console.log(this.state.text)
+      
+        const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${this.state.text}`, {
+            headers: {
+             Authorization: "Token 17cfc1a827957c96b7b2284ab656b740a90e358c",
+             'X-Requested-With': 'XMLHttpRequest' 
+            }
         })
+        console.log(results);
+        console.log(results.data.results)
+        console.log(this.state.wineSearchResults)
+        this.setState({
+            text: '',
+            wineSearchResults: results.data.results
+        })
+        console.log(this.state.wineSearchResults)
     }
     _handleChange = (event) => {
         this.setState({

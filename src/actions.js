@@ -15,11 +15,12 @@ export function actionAddWine(wine) {
     })
 }
 
-export function actionDelWine(wine) {
+export function actionDelWine(winelist, index) {
     return ({
         type: DEL_WINE,
         payload: {
-            wine
+            winelist,
+            index
         }
     })
 }
