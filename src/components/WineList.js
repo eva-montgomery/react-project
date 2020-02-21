@@ -30,7 +30,7 @@ export default class WineList extends React.Component {
                             
                                 <li key={i}>Comments: {m.comment}
                                 </li>
-                                <li key={i}><div className="label-container">Wine Label: <img src={m.label}/>
+                                <li key={i}><div className="label-container">Wine Label: <img src={m.label} alt="wine label"/>
                                 </div>
                                 </li>
                                 <li key={i}>

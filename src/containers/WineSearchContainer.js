@@ -18,7 +18,7 @@ import Axios from 'axios';
 function mapDispatchToProps(dispatch) {
     return {
         handleSubmit: async (query) => {
-            dispatch(actionLoading(true));
+            // dispatch(actionLoading(true));
             console.log(query)
       
            const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${query}`, {
@@ -29,9 +29,8 @@ function mapDispatchToProps(dispatch) {
            })
            console.log(results);
            console.log(results.data.results)
-            dispatch(actionSearch('cabernet'));
             dispatch(actionResults(results.data.results));
-            dispatch(actionLoading(false));
+            // dispatch(actionLoading(false));
         }
     }
 }

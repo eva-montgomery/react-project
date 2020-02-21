@@ -44,7 +44,7 @@ export function wineSearch(state=defaultState, action) {
         case RESULTS:
             return {
                 ...state,
-                results: action.payload.results
+                results: action.payload.wines
             }
         case LOADING:
             return {

@@ -33,11 +33,11 @@ export function actionLoading(isLoading) {
     }
 }
 
-export function actionResults(results) {
+export function actionResults(wines) {
     return {
         type: RESULTS,
         payload: {
-            results
+            wines
         }
     } 
 }

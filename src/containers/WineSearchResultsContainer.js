@@ -8,7 +8,7 @@ import WineSearchResults from '../components/WineSearchResults';
 
 function mapStateToProps(state) {
     return {
-        wines: state
+        wineSearchResults: state.wineSearch.results
     }
 }
 

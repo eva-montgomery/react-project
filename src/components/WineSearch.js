@@ -1,6 +1,7 @@
   
 import React from 'react';
 import Axios from 'axios';
+import WineSearchResults from '../containers/WineSearchResultsContainer'
 
 
 // export default function WineSearch({
@@ -21,51 +22,59 @@ export default class WineSearch extends React.Component {
         };
     }
     render() {
+        let {wineSearchResults} = this.state
         return (
             <div>
-            <div className="wine-search-container">
-                 <div className="wine-search-box">
-             <div className="wine-search-text">Search for wines</div>
-                <form onSubmit={this._handleSubmit} >
-                    <input
-                        className="wine-input"
-                        value={this.state.text}
-                        onChange={this._handleChange} 
-                    />
-                     <button className="wine-search-btn">Search for wines online</button>
-                </form>
+                <div className="wine-search-container">
+                    <div className="wine-search-box">
+                    <div className="wine-search-text">Need inspiration? Search for new wines online!</div>
+                        <form onSubmit={this._handleSubmit} >
+                            <input
+                                className="wine-input"
+                                value={this.state.text}
+                                 onChange={this._handleChange} 
+                             />
+                        <button className="wine-search-btn">Search for wines online</button>
+
+                        </form>
+                    </div>
                 </div>
-                </div>
-                </div>
+                    <table>
+                    
+                    <tbody>
+                    <WineSearchResults/> 
+                    </tbody>
+                    
+                    
+                    
+                    </table>
+            </div>
          
         )
     }
     _handleSubmit = async (event) => {
         event.preventDefault();
-        // this.props.handleSubmit(this.state.text)
+        this.props.handleSubmit(this.state.text)
         console.log(this.state.text)
       
-        const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${this.state.text}`, {
-            headers: {
-             Authorization: "Token 17cfc1a827957c96b7b2284ab656b740a90e358c",
-             'X-Requested-With': 'XMLHttpRequest' 
-            }
-        })
-        console.log(results);
-        console.log(results.data.results)
-        console.log(this.state.wineSearchResults)
+        // const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${this.state.text}`, {
+        //     headers: {
+        //      Authorization: "Token 17cfc1a827957c96b7b2284ab656b740a90e358c",
+        //      'X-Requested-With': 'XMLHttpRequest' 
+        //     }
+        // })
+        // console.log(results);
+        // console.log(results.data.results)
+        // console.log(this.state.wineSearchResults)
         this.setState({
             text: '',
-            wineSearchResults: results.data.results
         })
-        console.log(this.state.wineSearchResults)
+        // console.log(this.state.wineSearchResults)
     }
     _handleChange = (event) => {
         this.setState({
-            text: event.target.value
+            text: event.target.value,
         });
     }
 }
-
-
 
