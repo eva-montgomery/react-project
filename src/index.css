@@ -12,10 +12,6 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-
-  
-
-
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -145,11 +141,25 @@ padding-bottom: 10px;
   font-weight: 900;
 }
 
+.wine-list-container {
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+
+  
+}
+
 .rated-wine-cards {
+  flex-flow: row wrap;
+
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
   display: flex;
   display:inline-block;
+  flex-direction: row;
   align-items: center;
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -157,10 +167,12 @@ padding-bottom: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: white;
-  max-width: 200px;
+  /* max-width: 200px;
   min-width: 200px;
-  /* min-height: 300px;
-  max-height: 300px; */
+  min-height: 500px;
+  max-height: 500px; */
+  height: 500px;
+  width: 200px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -168,8 +180,14 @@ padding-bottom: 10px;
 }
 
 .label-container  {
+  /* height: auto; 
+  width: auto;  */
   height: auto; 
   width: auto; 
+  height: 250px;
+  width: 200px;
+  /* max-height: 250px;
+  max-width: 200px; */
 
 }
 
@@ -196,8 +214,36 @@ ul {
   overflow: hidden;
 }
 
-.footer {
 
+.wine-search-result-card {
+  display: flex;
+  display:inline-block;
+  align-items: center;
+  flex: 1 0 auto;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  max-width: 200px;
+  min-width: 200px;
+  /* min-height: 300px;
+  max-height: 300px; */
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.wine-search-result-card li {
+  text-align: left;
+  list-style: none;
+  margin-top: 2px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+.footer {
 justify-content: center;
 background-color: rgb(235, 121, 121);
 font-family: fantasy;

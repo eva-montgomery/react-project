@@ -6,13 +6,17 @@ export default function WineSearchResults({ wineSearchResults }) {
     console.log("WINESEARCHRESULTS")
    return (wineSearchResults && wineSearchResults.length > 0) ? wineSearchResults.map((wine, index) => {
         return (
-
-            <tr key={ index }>
-            <td>{ wine.id }</td>
-            <td>{ wine.wine }</td>
+    <div className="wine-search-result-card">
+            <tr key={ index } >
+            {/* <li>{ wine.id }</li> */}
+            <li>Type: { wine.wine }</li>
+            <li>Color: { wine.color }</li>
+            <li>Origin: { wine.country }</li>
+            <li>Date: { wine.date }</li>
             </tr>
+            </div>
         )
     }): 
  null
         }
-        
+       

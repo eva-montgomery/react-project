@@ -15,6 +15,7 @@ export default class WineList extends React.Component {
             
             <div>
                 <div className="rated-wines-title">My rated wines:</div>
+                <div className="wine-list-container">
                 {
                     this.props.winelist.wines.map( (m, i) => (
                         <div className="rated-wine-cards"> 
@@ -47,9 +48,11 @@ export default class WineList extends React.Component {
 
                                 </div>
                             </ul>
-                        </div>
+                            </div>
                     ))
                 }
+                </div>
+               
             </div>
         )
     } 
