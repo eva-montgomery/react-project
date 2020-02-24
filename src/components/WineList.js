@@ -9,14 +9,24 @@ export default class WineList extends React.Component {
             winelist: this.props.winelist.wines
         }
     }
+    _handleDel= (event, index) => {
+        event.preventDefault();
+        this.props.handleDel(this.props.winelist, index);
+    }
     render() {
- console.log(this.props)
-        return (
+        console.log(this.props)
+        console.log(this.state.winelist)
+
+
+
+        
+        return ( 
             
             <div>
                 <div className="rated-wines-title">My rated wines:</div>
                 <div className="wine-list-container">
                 {
+                    
                     this.props.winelist.wines.map( (m, i) => (
                         <div className="rated-wine-cards"> 
                             <ul> 
@@ -52,14 +62,11 @@ export default class WineList extends React.Component {
                     ))
                 }
                 </div>
-               
+
             </div>
         )
     } 
-    _handleDel= (event, index) => {
-        event.preventDefault();
-        this.props.handleDel(this.props.winelist, index);
-    }
-
+    
 }
+
 

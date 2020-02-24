@@ -57,15 +57,7 @@ export default class WineSearch extends React.Component {
         this.props.handleSubmit(this.state.text)
         console.log(this.state.text)
       
-        // const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${this.state.text}`, {
-        //     headers: {
-        //      Authorization: "Token 17cfc1a827957c96b7b2284ab656b740a90e358c",
-        //      'X-Requested-With': 'XMLHttpRequest' 
-        //     }
-        // })
-        // console.log(results);
-        // console.log(results.data.results)
-        // console.log(this.state.wineSearchResults)
+        
         this.setState({
             text: '',
         })

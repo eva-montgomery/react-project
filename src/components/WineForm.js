@@ -39,12 +39,12 @@ export default class WineForm extends React.Component {
                     value={this.state.shop} placeholder="Bought at"
                     />  
 
-                   <label for="wine-input">Wine Label</label>
+                   <label for="wine-input">Upload Wine Label:</label>
                 <input type="file" className="wine-input" 
                        accept="image/png, image/jpeg, image/jpg"
 
                      onChange={this._handleLabel}
-                    // value={this.state.label} 
+                    value="" 
                     />  
                 <input className="wine-input"
                      onChange={this._handleComment}
