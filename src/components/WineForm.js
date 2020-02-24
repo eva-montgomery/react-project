@@ -42,9 +42,8 @@ export default class WineForm extends React.Component {
                    <label for="wine-input">Upload Wine Label:</label>
                 <input type="file" className="wine-input" 
                        accept="image/png, image/jpeg, image/jpg"
-
                      onChange={this._handleLabel}
-                    value="" 
+                    value={this.label} 
                     />  
                 <input className="wine-input"
                      onChange={this._handleComment}
@@ -73,7 +72,7 @@ export default class WineForm extends React.Component {
                 shop: '',
                 label: '',
                 comment: '',
-                rating: '',})
+                rating: ''})
     }
 
      

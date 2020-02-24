@@ -27,7 +27,16 @@
 
 - API used: https://api.globalwinescore.com/
 
-- Set-up
+
+## SCREEN SHOTS
+
+![Screen Shot 2020-02-24 at 10 41 25 AM](https://user-images.githubusercontent.com/55462764/75167011-ba8b7f00-56f2-11ea-97aa-09e2656c7522.png)
+![Screen Shot 2020-02-24 at 10 42 24 AM](https://user-images.githubusercontent.com/55462764/75167023-bd866f80-56f2-11ea-9c97-3217b9711352.png)
+![Screen Shot 2020-02-24 at 10 46 35 AM](https://user-images.githubusercontent.com/55462764/75167183-faeafd00-56f2-11ea-96f2-ff78029535bd.png)
+![Screen Shot 2020-02-24 at 10 46 45 AM](https://user-images.githubusercontent.com/55462764/75167202-fde5ed80-56f2-11ea-9129-36805d12c85f.png)
+
+
+## Set-up
 - npx create-react-app mantras
 - npm i redux react-redux
 

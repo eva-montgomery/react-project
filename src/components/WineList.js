@@ -17,8 +17,9 @@ export default class WineList extends React.Component {
         console.log(this.props)
         console.log(this.state.winelist)
 
-
-
+        if (this.props.winelist.wines && this.props.winelist.wines.length === 0) { 
+            return <div className="rated-wines-title">You have not rated wines yet</div>
+        } else { 
         
         return ( 
             
@@ -66,7 +67,7 @@ export default class WineList extends React.Component {
             </div>
         )
     } 
-    
+}
 }
 
 
