@@ -6,6 +6,8 @@
 - At least 1 API
 - Presentations on Monday, Feb 24 2020
 
+## Author: Eva Montgomery
+
 ## Project Overview
 - An application that lets you add and rate wines
 - The user is able to add the following values:
@@ -25,7 +27,8 @@
 - The option to search online for a wine, rate it and add it to the rated wine list
 - Add the functionality, to search for new wines and add them to a favorites list "Wines I need to try"
 
-- API used: https://api.globalwinescore.com/
+## API used:
+- https://api.globalwinescore.com/
 
 
 ## SCREEN SHOTS
@@ -68,3 +71,4 @@
     - WineSearchResultsContainer
 - mapStateToProps
 - mapDispatchToProps    
+
