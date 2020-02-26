@@ -3,7 +3,10 @@ import {
     DEL_WINE,
     SEARCH, 
     RESULTS,
-    LOADING
+    LOADING,
+    SIGNUP,
+    LOGIN, 
+    LOGOUT
 
 } from "./actions"
 
@@ -28,8 +31,6 @@ export function wines(state=savedData, action) {
     localStorage.setItem("Wine-O-Clock", JSON.stringify(newState));
     return newState;
 }
-
-
 
 
 const defaultState = {
@@ -58,5 +59,21 @@ export function wineSearch(state=defaultState, action) {
             return {
                 ...state,
             }    
+    }
+}
+
+export function user(state=[], action) {
+    const newState = [...state];
+
+    switch(action.type) {
+        case LOGIN:
+            newState.push(action.payload.login);
+            break;
+        case SIGNUP:
+            newState.push(action.payload.signup);
+            break;     
+        case LOGOUT:
+            newState.push(action.payload.logout);
+            break;            
     }
 }

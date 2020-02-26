@@ -1,4 +1,5 @@
 # Wine-O-Clock Capstone Project
+- https://trello.com/b/4BfbOL4H
 
 ## Overview
 - An application to add and rate wine
@@ -28,15 +29,15 @@ The user account/profile should include:
     - Filer through / search other users rated wines
 
 - Routes required:
- - login / logout (/login)
- - signup (/signup)
- - Homepage, Add a new wine (/home)
- - Profile (/profile)
- - my rated wines overview (/mywines)
- - view all rated wines (/allwines)
- - Favorites (/favorites)
- - header/nav
- - footer
+    - login / logout (/login)
+    - signup (/signup)
+    - Homepage, Add a new wine (/home)
+    - Profile (/profile)
+    - my rated wines overview (/mywines)
+    - view all rated wines (/allwines)
+    - Favorites (/favorites)
+    - header/nav
+    - footer
 
 ## Requirements 
 - React Front-End

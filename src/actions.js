@@ -6,6 +6,10 @@ export const SELECT = 'SELECT';
 export const RESULTS = 'RESULTS';
 export const LOADING = 'LOADING';
 
+export const LOGIN = 'LOGIN';
+export const SIGNUP = 'SIGNUP';
+export const LOGOUT = 'LOGOUT';
+
 export function actionAddWine(wine) {
     return ({
         type: ADD_WINE,
@@ -60,4 +64,29 @@ export function actionSelect(id) {
     }
 }
 
+export function actionLogin(login) {
+    return {
+        type: LOGIN,
+        payload: {
+            login
+        }
+    }
+}
 
+export function actionSignup(signup) {
+    return {
+        type: SIGNUP,
+        payload: {
+            signup
+        }
+    }
+}
+
+export function actionLogout(logout) {
+    return {
+        type: LOGOUT,
+        payload: {
+            logout
+        }
+    }
+}

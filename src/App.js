@@ -5,16 +5,17 @@ import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
 
+import LoginForm from './containers/LoginFormContainer';
+import SignUpForm from './containers/SignUpFormContainer';
+
 import { createStore, combineReducers } from 'redux';
-import { wines, wineSearch } from './reducers';
+import { wines, wineSearch, user } from './reducers';
 import WineSearch from './containers/WineSearchContainer';
 import WineForm from './containers/WineFormContainer';
 import WineList from './containers/WineListContainer';
 import WineSearchResults from './containers/WineSearchContainer';
 
 import { Provider } from 'react-redux';
-
-
 
 
 const rootReducer = combineReducers({wines, wineSearch})
@@ -30,8 +31,10 @@ function App() {
 
       <Content />
       <Provider store={store}>
-        <WineForm />
+        <LoginForm />
+        <SignUpForm />
 
+        <WineForm />
         <WineList />
         <WineSearch />
       </Provider>
