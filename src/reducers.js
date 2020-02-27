@@ -62,18 +62,20 @@ export function wineSearch(state=defaultState, action) {
     }
 }
 
-export function user(state=[], action) {
-    const newState = [...state];
+export function user(state=false, action) {
+    const newState = state;
 
     switch(action.type) {
         case LOGIN:
-            newState.push(action.payload.login);
+           return action.payload.login;
             break;
         case SIGNUP:
-            newState.push(action.payload.signup);
+            return action.payload.signup;
             break;     
         case LOGOUT:
-            newState.push(action.payload.logout);
-            break;            
+            return action.payload.logout;
+            break;     
+        default:
+            return state           
     }
 }

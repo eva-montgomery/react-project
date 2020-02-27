@@ -23,8 +23,11 @@ export default class LoginForm extends React.Component {
                 <input type="password" className="login-input"
                      onChange={this._handlePassword}
                     value={this.state.password} placeholder="Password"
-                    />          
+                    />     <br></br>     
                 <input type="submit" value="Sign in" className="login-submit" />
+       
+                <p className="text-center">Don't have an account? <a href="/signup" id="signup">Sign up here</a></p>
+
                 </form>
             </div>
             </div>    
