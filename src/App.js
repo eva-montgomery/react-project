@@ -41,12 +41,10 @@ import { Provider } from 'react-redux';
 const rootReducer = combineReducers({wines, wineSearch, user})
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-
-
 function App() {
   return (
-    <Router>
-        <Provider store={store}>
+    <Provider store={store}>
+        <Router>
     <div className="App">
       <div className="content-container">
 
@@ -54,25 +52,25 @@ function App() {
       />
       <Switch>
           
-        <Route path="/">
+        <Route path="/" exact>
           <LoginForm /> 
         </Route>
-
+  
         <Route path="/signup">
           <SignUpForm />
         </Route>
-
-        {/* <Route path="/profile">
-            <Profile />
-        </Route> */}
-
-
 
         <Route path="/home">
             <Content />
             <WineForm />
             <WineList />
         </Route>
+    </Switch>
+
+
+        {/* <Route path="/profile">
+            <Profile />
+        </Route> */}
 
         {/* <Route path="/myfavorites">
           <MyFavorites />
@@ -83,14 +81,13 @@ function App() {
         </Route> */}
         
         {/* <WineSearch /> */}
-  
-    </Switch>
+ 
       <Footer />
       </div>
     </div>
+    </Router>
       </Provider>
       
-    </Router>
   );
 }
 

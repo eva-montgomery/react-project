@@ -8,6 +8,7 @@ export const LOADING = 'LOADING';
 
 export const LOGIN = 'LOGIN';
 export const SIGNUP = 'SIGNUP';
+export const USERTAKEN = "USERTAKEN";
 export const LOGOUT = 'LOGOUT';
 
 export function actionAddWine(wine) {
@@ -64,29 +65,30 @@ export function actionSelect(id) {
     }
 }
 
-export function actionLogin(login) {
+export function actionLogin() {
     return {
         type: LOGIN,
-        payload: {
-            login
-        }
+        
     }
 }
 
-export function actionSignup(signup) {
+export function actionSignup() {
     return {
         type: SIGNUP,
-        payload: {
-            signup
-        }
+        
     }
 }
 
-export function actionLogout(logout) {
+export function actionUserTaken() {
+    return {
+        type: USERTAKEN,
+
+    }
+}
+
+export function actionLogout() {
     return {
         type: LOGOUT,
-        payload: {
-            logout
-        }
+
     }
 }

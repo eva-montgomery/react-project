@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    Redirect
+  } from "react-router-dom"; 
 
 
 export default class LoginForm extends React.Component {
@@ -11,6 +14,8 @@ export default class LoginForm extends React.Component {
         };
     }
     render() {
+        console.log(this.props)
+
         return (
             <div className="login-form-container">
             <div className="login-box"> 
@@ -23,13 +28,14 @@ export default class LoginForm extends React.Component {
                 <input type="password" className="login-input"
                      onChange={this._handlePassword}
                     value={this.state.password} placeholder="Password"
-                    />     <br></br>     
+                    />   <br></br> <br></br>
                 <input type="submit" value="Sign in" className="login-submit" />
-       
-                <p className="text-center">Don't have an account? <a href="/signup" id="signup">Sign up here</a></p>
+       <br></br> <br></br>
+                <div>Don't have an account? <a href="/signup" id="signup">Sign up here</a></div>
 
                 </form>
             </div>
+        {this.props.loginStatus == true ? <Redirect to ="/home"/> : ""}    
             </div>    
         )
     }

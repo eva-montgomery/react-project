@@ -1,5 +1,7 @@
 import React from 'react';
-
+import {
+    Redirect
+  } from "react-router-dom"; 
 
 export default class LoginForm extends React.Component {
     constructor(props) {
@@ -12,6 +14,7 @@ export default class LoginForm extends React.Component {
         };
     }
     render() {
+        console.log(this.props)
         return (
             <div className="login-form-container">
             <div className="login-box"> 
@@ -27,15 +30,21 @@ export default class LoginForm extends React.Component {
                     />    
                <input className="login-input"
                      onChange={this._handleFirstName}
-                    value={this.state.password} placeholder="First Name"
+                    value={this.state.first_name} placeholder="First Name"
                     />   
                <input className="login-input"
                      onChange={this._handleLastName}
-                    value={this.state.password} placeholder="Last Name"
-                    />                                                 
-                <input type="submit" value="Sign Up" className="login-submit" />
+                    value={this.state.last_name} placeholder="Last Name"
+                    />          <br></br> <br></br>                                    
+                <input type="submit" value="Sign Up" className="login-submit" /> 
+                <br></br> <br></br>
+              <div>Already have an account? <a href="/login" id="login">Login here</a></div>
+              {this.props.isUserTaken && <div>User Taken</div>}
+
                 </form>
             </div>
+            {this.props.signUpStatus && <Redirect to ="/home"/>}   
+        
             </div>    
         )
     }

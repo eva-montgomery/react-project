@@ -6,6 +6,12 @@ import axios from 'axios';
 import LoginForm from '../components/LoginForm';
 import { actionLogin } from '../actions';
 
+function mapStateToProps(state) {
+    return {
+        loginStatus: state.user
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return {
         handleSubmit: async (UserLogin) => {
@@ -14,8 +20,8 @@ function mapDispatchToProps(dispatch) {
                 method: 'post',
                 url: "/api/login",
                 data: {
-                    email: "testuser@test.com",
-                    password: "1234"
+                    email: UserLogin.email,
+                    password: UserLogin.password
                 }
             }).then( resp => {
                 return resp.data;
@@ -30,5 +36,5 @@ function mapDispatchToProps(dispatch) {
 
 
 
-const reduxConnector = connect(null, mapDispatchToProps);
+const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
 export default reduxConnector(LoginForm);

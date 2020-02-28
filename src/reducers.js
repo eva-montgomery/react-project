@@ -5,6 +5,7 @@ import {
     RESULTS,
     LOADING,
     SIGNUP,
+    USERTAKEN,
     LOGIN, 
     LOGOUT
 
@@ -62,19 +63,42 @@ export function wineSearch(state=defaultState, action) {
     }
 }
 
-export function user(state=false, action) {
+export function user(state= {
+    isLoggedIn: false,
+    isUserTaken: false,
+    didSignup: false
+}, 
+action) {
     const newState = state;
 
     switch(action.type) {
         case LOGIN:
-           return action.payload.login;
+           return {
+               ...state,
+               isLoggedIn: action.payload.login
+           }
             break;
         case SIGNUP:
-            return action.payload.signup;
+
+            return {
+                ...state,
+              isUserTaken: false,
+              didSignup: true
+            }
             break;     
         case LOGOUT:
-            return action.payload.logout;
+            return {
+                ...state,
+                isLoggedIn: false
+            }
             break;     
+        case USERTAKEN:
+            return {
+                ...state,
+                didSignup: false,
+                isUserTaken: true
+            }
+            break;    
         default:
             return state           
     }
