@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import Header from './Header';
+import Nav from './Nav'
 import Content from './Content';
 import Footer from './Footer';
 
@@ -27,14 +28,18 @@ import Footer from './Footer';
 
 import LoginForm from './containers/LoginFormContainer';
 import SignUpForm from './containers/SignUpFormContainer';
+import Profile from './containers/ProfileContainer'
 
 import { createStore, combineReducers } from 'redux';
 import { wines, wineSearch, user } from './reducers';
-import WineSearch from './containers/WineSearchContainer';
 import WineForm from './containers/WineFormContainer';
 import WineList from './containers/WineListContainer';
-import WineSearchResults from './containers/WineSearchContainer';
+import AllWinesList from './containers/AllWinesListContainer';
+import MyFavoriteWines from './containers/MyFavoriteWinesListContainer';
+import MyWines from './containers/MyWinesContainer'
 
+import WineSearchResults from './containers/WineSearchContainer';
+import WineSearch from './containers/WineSearchContainer';
 import { Provider } from 'react-redux';
 
 
@@ -50,36 +55,50 @@ function App() {
 
     <Header 
       />
+ 
+    {/* <Nav 
+      /> */}
       <Switch>
           
         <Route path="/" exact>
           <LoginForm /> 
         </Route>
   
+        
         <Route path="/signup">
           <SignUpForm />
         </Route>
+        <Route path="/wines">
+          <AllWinesList />
+        </Route>
+        
+        <Route path="/mywines">
+          <MyWines />
+        </Route>
+
+        <Route path="/favorites">
+          <MyFavoriteWines />
+        </Route>
+        
+
 
         <Route path="/home">
-            <Content />
+            {/* <Content /> */}
             <WineForm />
             <WineList />
+        </Route>
+        <Route path="/profile" >
+          <Profile /> 
         </Route>
     </Switch>
 
 
-        {/* <Route path="/profile">
-            <Profile />
-        </Route> */}
+  
 
         {/* <Route path="/myfavorites">
           <MyFavorites />
         </Route>
 
-        <Route path="/allwines">
-          <ViewRatedWines />
-        </Route> */}
-        
         {/* <WineSearch /> */}
  
       <Footer />

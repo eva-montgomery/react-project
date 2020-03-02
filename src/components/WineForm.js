@@ -17,6 +17,18 @@ export default class WineForm extends React.Component {
     }
     render() {
         return (
+            <div>
+            <div className="main-content">
+          <h3>Hi Wine-Lover 🍷</h3>
+          <br></br>
+        <p>Welcome to Wine-O-Clock - your personal wine rating application!</p> 
+       
+        <p>Add the wines you bought to the form below and give them a wine-rating from 1-5, so every time you go to the store you can look in your app and check if you have already tried this wine!
+        <p>To view all rated wines by all users, you can simply click here. See a wine you want to try? Add it to your favorite list.</p>
+        </p>
+        <h4>And remember: It's Wine-O-Clock somewhere! Cheers!</h4>
+      
+      </div>
             <div className="wine-form-container">
             <div className="wine-box"> 
                 <form onSubmit={this._handleSubmit}>
@@ -57,6 +69,7 @@ export default class WineForm extends React.Component {
 
                 </form>
 
+            </div>
             </div>
             </div>
         )

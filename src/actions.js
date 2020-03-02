@@ -10,6 +10,8 @@ export const LOGIN = 'LOGIN';
 export const SIGNUP = 'SIGNUP';
 export const USERTAKEN = "USERTAKEN";
 export const LOGOUT = 'LOGOUT';
+export const PROFILE = 'PROFILE';
+export const EDIT_PROFILE = 'EDIT_PROFILE';
 
 export function actionAddWine(wine) {
     return ({
@@ -91,4 +93,23 @@ export function actionLogout() {
         type: LOGOUT,
 
     }
+}
+
+export function actionProfile(profile) {
+    return {
+        type: PROFILE,
+        payload: {
+            profile
+        }
+
+    }
+}
+
+export function actionEditProfile(profile) {
+    return ({
+        type: EDIT_PROFILE,
+        payload: {
+            profile
+        }
+    })
 }

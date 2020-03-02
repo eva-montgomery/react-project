@@ -3,7 +3,7 @@ import {
     connect
 } from 'react-redux';
 
-import AllWinesList from '../components/AllWinesList';
+import MyWines from '../components/MyWines';
 import { actionDelWine } from '../actions';
 
 import axios from 'axios';
@@ -24,4 +24,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
-export default reduxConnector(AllWinesList);
+export default reduxConnector(MyWines);

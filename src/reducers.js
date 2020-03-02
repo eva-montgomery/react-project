@@ -7,7 +7,9 @@ import {
     SIGNUP,
     USERTAKEN,
     LOGIN, 
-    LOGOUT
+    LOGOUT,
+    PROFILE,
+    EDIT_PROFILE
 
 } from "./actions"
 
@@ -94,12 +96,31 @@ action) {
             break;     
         case USERTAKEN:
             return {
-                ...state,
+                 
                 didSignup: false,
                 isUserTaken: true
             }
             break;    
         default:
             return state           
+    }
+}
+
+export function profile(state=[], action) {
+    const newState = [...state];
+
+    switch(action.type) {
+        case PROFILE:
+            return {
+                ...state,
+            }   
+            break;
+        case EDIT_PROFILE:
+            return {
+                ...state,
+            }            
+            break;
+        default:
+            break;    
     }
 }

@@ -67,17 +67,30 @@ code {
 
 
 .header {
-display: flex;  
-justify-content: center;
-background-color: rgb(235, 121, 121);
-font-family: fantasy;
-font-weight: 900;
-padding-top: 20px;
-padding-bottom: 10px;
+  display: flex;  
+  justify-content: center;
+  background-color: rgb(235, 121, 121);
+  font-family: fantasy;
+  font-weight: 900;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .header h1 {
   font-size: 18px;
+}
+
+.nav {
+  justify-content: right;
+  align-items: flex-end;
+}
+.nav a {
+  float: right;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(36, 190, 170);
 }
 
 .login-form-container {

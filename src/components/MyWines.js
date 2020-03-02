@@ -2,11 +2,11 @@ import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 
-export default class WineList extends React.Component {
+export default class MyWines extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            winelist: this.props.winelist.wines
+            winelist: this.props.winelist.wines.user_id
         }
     }
     _handleDel= (event, index) => {
@@ -16,16 +16,11 @@ export default class WineList extends React.Component {
     render() {
         console.log(this.props)
         console.log(this.state.winelist)
-
-        if (this.props.winelist.wines && this.props.winelist.wines.length === 0) { 
-            return <div className="rated-wines-title">You have not rated any wines yet</div>
-        } else { 
-        
         return ( 
             
             <div>
     
-                <div className="rated-wines-title">My most recent rated wines:</div>
+                <div className="rated-wines-title">My rated wines:</div>
                 <div className="wine-list-container">
                 {
                     
@@ -69,6 +64,4 @@ export default class WineList extends React.Component {
         )
     } 
 }
-}
-
 
