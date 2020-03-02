@@ -77,7 +77,7 @@ action) {
         case LOGIN:
            return {
                ...state,
-               isLoggedIn: action.payload.login
+               isLoggedIn: true
            }
             break;
         case SIGNUP:

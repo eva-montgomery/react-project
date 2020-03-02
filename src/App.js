@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Component } from 'react';
 
 import {
   BrowserRouter as Router,
@@ -36,7 +37,7 @@ import WineForm from './containers/WineFormContainer';
 import WineList from './containers/WineListContainer';
 import AllWinesList from './containers/AllWinesListContainer';
 import MyFavoriteWines from './containers/MyFavoriteWinesListContainer';
-import MyWines from './containers/MyWinesContainer'
+
 
 import WineSearchResults from './containers/WineSearchContainer';
 import WineSearch from './containers/WineSearchContainer';
@@ -48,16 +49,14 @@ const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wi
 
 function App() {
   return (
-    <Provider store={store}>
-        <Router>
     <div className="App">
       <div className="content-container">
+    <Provider store={store}>
+        <Router>
 
-    <Header 
+    <Nav 
       />
- 
-    {/* <Nav 
-      /> */}
+
       <Switch>
           
         <Route path="/" exact>
@@ -72,20 +71,22 @@ function App() {
           <AllWinesList />
         </Route>
         
-        <Route path="/mywines">
-          <MyWines />
-        </Route>
+
+        
 
         <Route path="/favorites">
           <MyFavoriteWines />
         </Route>
         
-
+        <Route path="/mywines">
+          <WineList />
+        </Route>
 
         <Route path="/home">
             {/* <Content /> */}
             <WineForm />
             <WineList />
+
         </Route>
         <Route path="/profile" >
           <Profile /> 
@@ -102,10 +103,10 @@ function App() {
         {/* <WineSearch /> */}
  
       <Footer />
-      </div>
-    </div>
     </Router>
       </Provider>
+      </div>
+    </div>
       
   );
 }

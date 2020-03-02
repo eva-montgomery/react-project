@@ -31,18 +31,18 @@ function mapDispatchToProps(dispatch) {
                 method: 'post',
                 url: "/api/wines/",
                 data: {
-                    wine_name: allWines.wine_name,
-                    wine_type: allWines.wine_type,
-                    wine_price: allWines.wine_price,
-                    wine_store: allWines.wine_store,
-                    wine_label: allWines.wine_label,
-                    comments: allWines.comments,
-                    wine_rating: allWines.wine_rating
+                    wine_name: winelist.wine_name,
+                    wine_type: winelist.wine_type,
+                    wine_price: winelist.wine_price,
+                    wine_store: winelist.wine_store,
+                    wine_label: winelist.wine_label,
+                    comments: winelist.comments,
+                    wine_rating: winelist.wine_rating
                 }
             }).then( resp => {
                 return resp.data;
             });
-            if (allWines.success) {
+            if (winelist.success) {
                 dispatch(actionDelWine(winelist, index))
 
             } 

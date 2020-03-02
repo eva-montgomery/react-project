@@ -1,5 +1,6 @@
 
 import React from 'react';
+import axios from 'axios';
 
 // Display Profile Information
 
@@ -7,19 +8,33 @@ export default class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // profileInformation: this.props.profileInformation.profile
-            email: '',
-            password: '',
-            first_name: '',
-            last_name: ''
+            profile: []
         };
     }
+
+    async componentDidMount() {
+        const myProfileInfo = await axios ({
+            method:'get',
+            url: '/api/profile'
+    
+        }).then( resp => {
+            return resp.data;
+        });
+    this.setState({
+        profile: myProfileInfo.profile
+    })
+    }
+    _handleProfile = (event) => {
+        this.setState({
+            profile: event.target.value
+        });
+    }   
 render() {
     return (
     <div>
 <div className="profile-information">My profile information:</div>
 {/* { 
-this.props.profileInformation.profile.map( (m, i) => (
+this.state.profile.map( (m, i) => (
     <ul>
          <li key={i}>E-Mail: {m.email}</li>
          <li key={i}>Password: {m.password}</li>
@@ -38,9 +53,5 @@ this.props.profileInformation.profile.map( (m, i) => (
     
 }
 
-_handleProfile = (event) => {
-    this.setState({
-        profile: event.target.value
-    });
-}             
+       
 }

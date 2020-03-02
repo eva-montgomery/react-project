@@ -1,23 +1,23 @@
 ##  Backend:
 [ ] - edit Profile information
-[ ] - add new wine
+[x] - add new wine
 [ ] - edit wine
 [ ] - logout
 [ ] - multer for image upload
-[ ] - 
+[ ] - require login
 [ ] - 
 
 
 ## Frontend:
 [ ] - profile
 [ ] - edit Profile information
-[ ] - add new wine
+[x] - add new wine
 [ ] - edit wine
 [ ] - logout
-[ ] - all rated wines
-[ ] - my rated wines
-[ ] - favorites
+[O] - all rated wines --> cards appear but content does not
+[x] - my rated wines
+[x] - favorites
 [ ] - favorites button
 [ ] - My most recent rated wines
 [ ] - Filter Options
-[ ] - Navbar
+[x] - Navbar

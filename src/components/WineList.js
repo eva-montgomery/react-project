@@ -11,7 +11,8 @@ export default class WineList extends React.Component {
     }
     _handleDel= (event, index) => {
         event.preventDefault();
-        this.props.handleDel(this.props.winelist, index);
+        console.log('calling handle del')
+        this.props.handleDel(this.state.winelist, index);
     }
     render() {
         console.log(this.props)
@@ -55,7 +56,7 @@ export default class WineList extends React.Component {
                                         starColor="#f00"
                                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                                 </li>
-                                {/* <input type="submit" value="Edit" className="wine-edit" /> */}
+                                <input type="submit" value="Edit" className="wine-edit" />
                                 <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, i)} />
 
                                 </div>

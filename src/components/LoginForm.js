@@ -50,7 +50,7 @@ export default class LoginForm extends React.Component {
 
                 </form>
             </div>
-        {this.props.loginStatus == true ? <Redirect to ="/home"/> : ""}    
+        {this.props.loginStatus.isLoggedIn == true ? <Redirect to ="/home"/> : ""}    
             </div>    
             </div>
         )

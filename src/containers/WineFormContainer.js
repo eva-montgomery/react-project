@@ -33,13 +33,13 @@ function mapDispatchToProps(dispatch) {
                 method: 'post',
                 url: "/api/wines/create",
                 data: {
-                    wine_name: NewWine.wine_name,
-                    wine_type: NewWine.wine_type,
-                    wine_price: NewWine.wine_price,
-                    wine_store: NewWine.wine_store,
-                    wine_label: NewWine.wine_label,
-                    comments: NewWine.comments,
-                    wine_rating: NewWine.wine_rating
+                    wine_name: NewWine.wine,
+                    wine_type: NewWine.type,
+                    wine_price: NewWine.price,
+                    wine_store: NewWine.store,
+                    wine_label: NewWine.label,
+                    comments: NewWine.comment,
+                    wine_rating: NewWine.rating
                 }
             }).then( resp => {
                 return resp.data;

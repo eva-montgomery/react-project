@@ -1,14 +1,28 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
-
+import axios from 'axios';
+ 
 
 export default class AllWinesList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            winelist: this.props.winelist.wines
+            winelist: []
         }
     }
+    async componentDidMount() {
+        const allWines = await axios ({
+            method:'get',
+            url: '/api/wines'
+    
+        }).then( resp => {
+            return resp.data;
+        });
+    this.setState({
+        winelist: allWines.wineList
+    })
+    }
+
     _handleDel= (event, index) => {
         event.preventDefault();
         this.props.handleDel(this.props.winelist, index);
@@ -24,7 +38,7 @@ export default class AllWinesList extends React.Component {
                 <div className="wine-list-container">
                 {
                     
-                    this.props.winelist.wines.map( (m, i) => (
+                    this.state.winelist.map( (m, i) => (
                         <div className="rated-wine-cards"> 
                             <ul> 
                                 <div key={i}>{m.wine}
@@ -64,6 +78,4 @@ export default class AllWinesList extends React.Component {
         )
     } 
 }
-
-
 
