@@ -65,7 +65,7 @@ class hamburgerMenuPage extends Component {
 
 
                   <MDBNavItem>
-                    <MDBNavLink to='/login'>Logout</MDBNavLink>
+                    <MDBNavLink to='/logout'>Logout</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>

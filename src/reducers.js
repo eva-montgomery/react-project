@@ -13,12 +13,13 @@ import {
 
 } from "./actions"
 
-let savedData = localStorage.getItem("Wine-O-Clock");
-savedData = savedData ? JSON.parse(savedData) : []
+// let savedData = localStorage.getItem("Wine-O-Clock");
+// savedData = savedData ? JSON.parse(savedData) : []
 
 // import {combineReducers} from 'redux';
+// state=savedData
 
-export function wines(state=savedData, action) {
+export function wines(state=[], action) {
     const newState = [...state];
 
     switch(action.type) {
@@ -31,7 +32,7 @@ export function wines(state=savedData, action) {
         default:
             break;    
     }
-    localStorage.setItem("Wine-O-Clock", JSON.stringify(newState));
+    // localStorage.setItem("Wine-O-Clock", JSON.stringify(newState));
     return newState;
 }
 

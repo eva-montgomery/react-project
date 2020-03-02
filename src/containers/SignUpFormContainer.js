@@ -3,7 +3,6 @@ import {
 } from 'react-redux';
 
 import axios from 'axios';
-
 import SignUpForm from '../components/SignUpForm';
 import { actionSignup, actionUserTaken } from '../actions';
 

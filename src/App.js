@@ -30,7 +30,7 @@ import Footer from './Footer';
 import LoginForm from './containers/LoginFormContainer';
 import SignUpForm from './containers/SignUpFormContainer';
 import Profile from './containers/ProfileContainer'
-
+import Logout from './containers/LogoutContainer';
 import { createStore, combineReducers } from 'redux';
 import { wines, wineSearch, user } from './reducers';
 import WineForm from './containers/WineFormContainer';
@@ -62,7 +62,10 @@ function App() {
         <Route path="/" exact>
           <LoginForm /> 
         </Route>
-  
+
+        <Route path="/logout" exact>
+          <Logout /> 
+        </Route>
         
         <Route path="/signup">
           <SignUpForm />

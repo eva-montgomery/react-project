@@ -4,10 +4,11 @@ import {
 import axios from 'axios';
 
 
+
 import WineForm from '../components/WineForm';
 import { actionAddWine } from '../actions';
  
-
+axios.defaults.withCredentials = true;
 
 function mapStateToProps(state) {
     return {

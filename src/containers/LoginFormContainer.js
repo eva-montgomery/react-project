@@ -7,6 +7,7 @@ import LoginForm from '../components/LoginForm';
 import { actionLogin } from '../actions';
 
 function mapStateToProps(state) {
+    console.log(state.user)
     return {
         loginStatus: state.user
     }

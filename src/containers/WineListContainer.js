@@ -7,11 +7,25 @@ import WineList from '../components/WineList';
 import { actionDelWine } from '../actions';
 
 import axios from 'axios';
-
+axios.defaults.withCredentials = true;
 function mapStateToProps(state) {
-    return {
-        winelist: state
+
+    const getWines = async () => {
+        const myWines = await axios({
+            method: 'get',
+            url: '/api/mywines'
+        }).then( resp => {
+            console.log(resp)
+            return resp.data;
+        });
+        return myWines
     }
+    
+
+
+    return {
+        winelist: getWines
+    }   
 }
 
 

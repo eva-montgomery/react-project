@@ -6,7 +6,6 @@ import {
 import AllWinesList from '../components/AllWinesList';
 import { actionDelWine } from '../actions';
 
-import axios from 'axios';
 
 function mapStateToProps(state) {
     return {
