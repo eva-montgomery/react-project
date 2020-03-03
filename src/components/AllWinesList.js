@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    Redirect
+  } from "react-router-dom"; 
 import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
  
@@ -72,6 +75,8 @@ export default class AllWinesList extends React.Component {
                             </div>
                     ))
                 }
+                {/* {!this.state.isLoggedIn && <Redirect to ="/"/>}  */}
+
                 </div>
 
             </div>

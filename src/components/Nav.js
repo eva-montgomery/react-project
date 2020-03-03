@@ -10,7 +10,8 @@ import {
   MDBCollapse,
   MDBContainer
 } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+
+import { BrowserRouter as Router, Redirect } from 'react-router-dom';
 
 class hamburgerMenuPage extends Component {
   state = {
@@ -24,10 +25,14 @@ class hamburgerMenuPage extends Component {
   };
 
   render() {
+    // console.log(this.props)
+    console.log(this.props.loginStatus.isLoggedIn)
     return (
+      
         <div className="header">
  
         <MDBContainer>
+      
           <MDBNavbar
             color='light-blue lighten-4'
             style={{ marginTop: '10px' }}
@@ -43,6 +48,7 @@ class hamburgerMenuPage extends Component {
                 isOpen={this.state.collapseID}
                 navbar
               >
+                {this.props.loginStatus.isLoggedIn ?
                 <MDBNavbarNav left>
                   <MDBNavItem active>
                     <MDBNavLink to='/home'>Home</MDBNavLink>
@@ -67,10 +73,20 @@ class hamburgerMenuPage extends Component {
                   <MDBNavItem>
                     <MDBNavLink to='/logout'>Logout</MDBNavLink>
                   </MDBNavItem>
+
                 </MDBNavbarNav>
+                :   
+                <MDBNavbarNav left>   
+                  <MDBNavItem>                      
+                    <MDBNavLink to='/'>Login</MDBNavLink>
+                    <Redirect to ="/"/>
+                  </MDBNavItem>
+                </MDBNavbarNav>                
+              }
               </MDBCollapse>
             </MDBContainer>
           </MDBNavbar>
+
         </MDBContainer>
       </div>
     );

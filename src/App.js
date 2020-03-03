@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 
 import Header from './Header';
-import Nav from './Nav'
+// import Nav from './components/Nav';
 import Content from './Content';
 import Footer from './Footer';
 
@@ -26,6 +26,7 @@ import Footer from './Footer';
 // import MyFavorites from './MyFavorites';
 
 
+import NavContainer from './containers/NavContainer';
 
 import LoginForm from './containers/LoginFormContainer';
 import SignUpForm from './containers/SignUpFormContainer';
@@ -54,7 +55,7 @@ function App() {
     <Provider store={store}>
         <Router>
 
-    <Nav 
+    <NavContainer 
       />
 
       <Switch>

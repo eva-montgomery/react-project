@@ -1,7 +1,12 @@
 import React from 'react';
+import {
+    Redirect
+  } from "react-router-dom"; 
 import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
+
+
 
 export default class WineList extends React.Component {
     constructor(props) {
@@ -78,6 +83,7 @@ export default class WineList extends React.Component {
                             </div>
                     ))
                 }
+
                 </div>
 
             </div>

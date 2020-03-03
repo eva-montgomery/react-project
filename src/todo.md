@@ -2,9 +2,9 @@
 [ ] - edit Profile information
 [x] - add new wine
 [ ] - edit wine
-[ ] - logout
+[x] - logout
 [ ] - multer for image upload
-[ ] - require login
+[x] - require login
 [ ] - 
 
 
@@ -13,11 +13,12 @@
 [ ] - edit Profile information
 [x] - add new wine
 [ ] - edit wine
-[ ] - logout
+[O] - logout --> only works with double clicks
 [O] - all rated wines --> cards appear but content does not
 [x] - my rated wines
-[x] - favorites
+[0] - favorites
 [ ] - favorites button
 [ ] - My most recent rated wines
 [ ] - Filter Options
 [x] - Navbar
+[x] - Redirect to login 

@@ -1,7 +1,10 @@
 
 import React from 'react';
+import {
+    Redirect
+  } from "react-router-dom"; 
 import axios from 'axios';
-
+axios.defaults.withCredentials = true;
 // Display Profile Information
 
 export default class Profile extends React.Component {
@@ -24,11 +27,11 @@ export default class Profile extends React.Component {
         profile: myProfileInfo.profile
     })
     }
-    _handleProfile = (event) => {
-        this.setState({
-            profile: event.target.value
-        });
-    }   
+    // _handleProfile = (event) => {
+    //     this.setState({
+    //         profile: event.target.value
+    //     });
+    // }   
 render() {
     return (
     <div>
@@ -44,14 +47,9 @@ this.state.profile.map( (m, i) => (
 
     </ul>
 ))} */}
+{/* {!this.state.isLoggedIn && <Redirect to ="/"/>}  */}
 
      </div>
-    )
-
-
-
-    
-}
-
-       
+    )    
+}     
 }
