@@ -98,11 +98,7 @@ function App() {
     </Switch>
 
 
-  
 
-        {/* <Route path="/myfavorites">
-          <MyFavorites />
-        </Route>
 
         {/* <WineSearch /> */}
  

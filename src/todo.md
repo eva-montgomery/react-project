@@ -2,6 +2,7 @@
 [ ] - edit Profile information
 [x] - add new wine
 [ ] - edit wine
+[ ] - delete wine
 [x] - logout
 [ ] - multer for image upload
 [x] - require login

@@ -47,7 +47,7 @@ export default class WineList extends React.Component {
             
             <div>
     
-                <div className="rated-wines-title">My most recent rated wines:</div>
+                <div className="rated-wines-title">Your rated wines:</div>
                 <div className="wine-list-container">
                 {
                     
@@ -63,7 +63,7 @@ export default class WineList extends React.Component {
                                 </li>
                                 <li key={i}>Comments: {m.comments}
                                 </li>
-                                <li key={i}><div className="label-container">Wine Label: <img src={m.wine_label} alt="wine label"/>
+                                <li key={i}><div className="label-container">Wine Label: <img src={`/images/${m.wine_label}`} alt="wine label"/>
                                 </div>
                                 </li>
                                 <li key={i}>

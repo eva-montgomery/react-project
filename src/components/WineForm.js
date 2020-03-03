@@ -75,7 +75,7 @@ export default class WineForm extends React.Component {
         )
     }
     _handleSubmit = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         console.log(this.state)
         this.props.handleSubmit(this.state);
         this.setState({
