@@ -16,8 +16,8 @@
 [O] - logout --> only works with double clicks
 [O] - all rated wines --> cards appear but content does not
 [x] - my rated wines
-[0] - favorites
-[ ] - favorites button
+[x] - favorites
+[x] - favorites button
 [ ] - My most recent rated wines
 [ ] - Filter Options
 [x] - Navbar

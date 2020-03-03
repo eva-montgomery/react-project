@@ -4,6 +4,8 @@ import {
   } from "react-router-dom"; 
 import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
+axios.defaults.withCredentials = true;
+
  
 
 export default class AllWinesList extends React.Component {
@@ -30,6 +32,20 @@ export default class AllWinesList extends React.Component {
         event.preventDefault();
         this.props.handleDel(this.props.winelist, index);
     }
+
+    _handleFavorite= async (event, wineId) => {
+        const favorites = await axios({
+            method: 'post',
+            url: "/api/addtofavorites",
+            data: {
+                wine_id: wineId
+            }
+        }).then( resp => {
+            return resp.data;
+        });
+        console.log(favorites)
+    }
+
     render() {
         console.log(this.props)
         console.log(this.state.winelist)
@@ -68,6 +84,9 @@ export default class AllWinesList extends React.Component {
                                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                                 </li>
                                 {/* <input type="submit" value="Edit" className="wine-edit" /> */}
+
+                                <input type="button" value="❤️" onClick={(event)=> this._handleFavorite(event, m.id)} />
+
                                 <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, i)} />
 
                                 </div>
