@@ -28,10 +28,28 @@ export default class AllWinesList extends React.Component {
     })
     }
 
-    _handleDel= (event, index) => {
-        event.preventDefault();
-        this.props.handleDel(this.props.winelist, index);
-    }
+    // _handleDel= (event, index) => {
+    //     event.preventDefault();
+    //     this.props.handleDel(this.props.winelist, index);
+    // }
+
+    // _handleDel= async (event, wineId, index) => {
+    //     console.log(this.props)
+    //     event.preventDefault();
+    //     this.props.handleDel(this.props.winelist.wines, index);
+    //     const deleted = await axios({
+    //         method: 'post',
+    //         url: "/api/delete",
+    //         data: {
+    //             wine_id: wineId
+    //         }
+    //     }).then( resp => {
+    //         return resp.data;
+    //     });
+    //     console.log(deleted)
+    // }
+
+    
 
     _handleFavorite= async (event, wineId) => {
         const favorites = await axios({
@@ -87,7 +105,7 @@ export default class AllWinesList extends React.Component {
 
                                 <input type="button" value="❤️" onClick={(event)=> this._handleFavorite(event, m.id)} />
 
-                                <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, i)} />
+                                {/* <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} /> */}
 
                                 </div>
                             </ul>

@@ -1,6 +1,7 @@
 import {
     ADD_WINE,
     DEL_WINE,
+    GET_PERSONAL_WINES,
     SEARCH, 
     RESULTS,
     LOADING,
@@ -12,6 +13,9 @@ import {
     EDIT_PROFILE
 
 } from "./actions"
+
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 // let savedData = localStorage.getItem("Wine-O-Clock");
 // savedData = savedData ? JSON.parse(savedData) : []
@@ -28,6 +32,9 @@ export function wines(state=[], action) {
             break;
         case DEL_WINE:
             newState.splice(action.payload.index, 1);
+            break;
+        case GET_PERSONAL_WINES:
+            return action.payload.wines
             break;
         default:
             break;    

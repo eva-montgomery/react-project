@@ -17,29 +17,39 @@ export default class WineList extends React.Component {
         }
     }
     async componentDidMount() {
-        const myWines = await axios({
-            method: 'get',
-            url: '/api/mywines'
-        }).then( resp => {
-            console.log(resp)
-            return resp.data;
-        });
-        console.log(myWines)
-        this.setState({
-            winelist: myWines.wineList
-        })
-        console.log(this.state.winelist)
+        console.log(this.props)
+        console.log(this.props.winelist)
+        
+        await this.props.getWines();
+        console.log(this.props.winelist)
     }
 
-    _handleDel= (event, index) => {
+    // _handleDel= (event, index) => {
+    //     event.preventDefault();
+    //     console.log('calling handle del')
+    //     this.props.handleDel(this.props.winelist.wines, index);
+    // }
+
+    _handleDel= async (event, wineId, index) => {
+        console.log(this.props)
         event.preventDefault();
-        console.log('calling handle del')
-        this.props.handleDel(this.state.winelist, index);
+        this.props.handleDel(this.props.winelist.wines, wineId, index);
+        // const deleted = await axios({
+        //     method: 'post',
+        //     url: "/api/delete",
+        //     data: {
+        //         wine_id: wineId
+        //     }
+        // }).then( resp => {
+        //     return resp.data;
+        // });
     }
+
+
     render() {
         console.log(this.state)
-
-        if (this.state.winelist.length === 0) { 
+        console.log(this.props)
+        if (this.props.winelist.wines.length === 0) { 
             return <div className="rated-wines-title">You have not rated any wines yet</div>
         } else { 
         
@@ -51,22 +61,22 @@ export default class WineList extends React.Component {
                 <div className="wine-list-container">
                 {
                     
-                    this.state.winelist.map( (m, i) => (
-                        <div className="rated-wine-cards"> 
+                    this.props.winelist.wines.map( (m, i) => (
+                        <div key={`wine-${m.wine_name}-${i}`}className="rated-wine-cards"> 
                             <ul> 
-                                <div key={i}>{m.wine_name}
-                                <li key={i}>Type: {m.wine_type}
+                                <div>{m.wine_name}
+                                <li>Type: {m.wine_type}
                                 </li>
-                                <li key={i}>Price: {m.wine_price}
+                                <li>Price: {m.wine_price}
                                 </li>
-                                <li key={i}>Bought at: {m.wine_store}
+                                <li>Bought at: {m.wine_store}
                                 </li>
-                                <li key={i}>Comments: {m.comments}
+                                <li>Comments: {m.comments}
                                 </li>
-                                <li key={i}><div className="label-container">Wine Label: <img src={`/images/${m.wine_label}`} alt="wine label"/>
+                                <li><div className="label-container">Wine Label: <img src={`/images/${m.wine_label}`} alt="wine label"/>
                                 </div>
                                 </li>
-                                <li key={i}>
+                                <li>
                                     <StarRatingComponent className="wine-glasses"
                                         name="app3"
                                         starCount={5}

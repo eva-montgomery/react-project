@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 import WineForm from '../components/WineForm';
-import { actionAddWine } from '../actions';
+import { actionAddWine, getPersonalWines } from '../actions';
  
 axios.defaults.withCredentials = true;
 
@@ -66,7 +66,18 @@ function mapDispatchToProps(dispatch) {
                 return resp.data;
             });
             if (addNewWine.success) {
-                dispatch(actionAddWine(NewWine))
+                // dispatch(actionAddWine(NewWine))
+                const myWines = await axios({
+                    method: 'get',
+                    url: '/api/mywines'
+                }).then( resp => {
+                    console.log(resp)
+                    return resp.data.wineList;
+                });
+                if (myWines.length > 0) {
+                    console.log('calling dispatch')
+                    dispatch(getPersonalWines(myWines))
+                }
             }
         }
     }

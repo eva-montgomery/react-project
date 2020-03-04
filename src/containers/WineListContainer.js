@@ -4,28 +4,18 @@ import {
 } from 'react-redux';
 
 import WineList from '../components/WineList';
-import { actionDelWine } from '../actions';
+import { actionDelWine, getPersonalWines } from '../actions';
 
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
 function mapStateToProps(state) {
-
-    const getWines = async () => {
-        const myWines = await axios({
-            method: 'get',
-            url: '/api/mywines'
-        }).then( resp => {
-            console.log(resp)
-            return resp.data;
-        });
-        return myWines
-    }
-    
+    console.log(state)
 
 
     return {
-        winelist: getWines
+        winelist: state,
+
     }   
 }
 
@@ -40,28 +30,36 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleDel: async (winelist, index) => {
-            console.log(winelist, index)
-            const allWines = await axios({
+        handleDel: async (winelist, wineId, index) => {
+            const deleted = await axios({
                 method: 'post',
-                url: "/api/wines/",
+                url: "/api/delete",
                 data: {
-                    wine_name: winelist.wine_name,
-                    wine_type: winelist.wine_type,
-                    wine_price: winelist.wine_price,
-                    wine_store: winelist.wine_store,
-                    wine_label: winelist.wine_label,
-                    comments: winelist.comments,
-                    wine_rating: winelist.wine_rating
+                    wine_id: wineId
                 }
             }).then( resp => {
                 return resp.data;
             });
-            if (winelist.success) {
-                dispatch(actionDelWine(winelist, index))
+            console.log(deleted)
+            if (deleted.success) {
+                dispatch(actionDelWine(winelist, wineId, index))
 
             } 
+        },
+         getWines: async () => {
+            const myWines = await axios({
+                method: 'get',
+                url: '/api/mywines'
+            }).then( resp => {
+                console.log(resp)
+                return resp.data.wineList;
+            });
+            if (myWines.length > 0) {
+                console.log('calling dispatch')
+                dispatch(getPersonalWines(myWines))
+            }
         }
+    
     }
 }
 
