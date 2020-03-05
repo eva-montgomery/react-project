@@ -30,36 +30,50 @@ function mapStateToProps(state) {
         return myFavWines
     }
     
-
-
     return {
         winelist: getFavWines
     }   
 }
+
 function mapDispatchToProps(dispatch) {
     return {
-        handleDel: async (winelist, index) => {
-            console.log(winelist, index)
-            const favWines = await axios({
+        handleDel: async (winelist, wineId, index) => {
+            const deleted = await axios({
                 method: 'post',
-                url: "/api/favorites/",
+                url: "/api/deletefavwine",
                 data: {
-                    wine_name: winelist.wine_name,
-                    wine_type: winelist.wine_type,
-                    wine_price: winelist.wine_price,
-                    wine_store: winelist.wine_store,
-                    wine_label: winelist.wine_label,
-                    comments: winelist.comments,
-                    wine_rating: winelist.wine_rating
+                    wine_id: wineId
                 }
             }).then( resp => {
                 return resp.data;
             });
-            if (winelist.success) {
-                dispatch(actionDelWine(winelist, index))
+            console.log(deleted.deletedWine)
+            if (deleted.deletedWine) {
+                dispatch(actionDelWine(winelist, wineId, index))
 
             } 
-        }
+        },
+        //     console.log(winelist, index)
+        //     const favWines = await axios({
+        //         method: 'post',
+        //         url: "/api/favorites/",
+        //         data: {
+        //             wine_name: winelist.wine_name,
+        //             wine_type: winelist.wine_type,
+        //             wine_price: winelist.wine_price,
+        //             wine_store: winelist.wine_store,
+        //             wine_label: winelist.wine_label,
+        //             comments: winelist.comments,
+        //             wine_rating: winelist.wine_rating
+        //         }
+        //     }).then( resp => {
+        //         return resp.data;
+        //     });
+        //     if (winelist.success) {
+        //         dispatch(actionDelWine(winelist, index))
+
+        //     } 
+        // }
     }
 }
 

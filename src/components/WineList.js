@@ -86,7 +86,7 @@ export default class WineList extends React.Component {
                                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                                 </li>
                                 <input type="submit" value="Edit" className="wine-edit" />
-                                <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, i)} />
+                                <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} />
 
                                 </div>
                             </ul>

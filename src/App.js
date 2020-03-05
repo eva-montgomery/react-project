@@ -51,7 +51,7 @@ const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wi
 function App() {
   return (
     <div className="App">
-      <div className="content-container">
+      {/* <div className="content-container"> */}
     <Provider store={store}>
         <Router>
 
@@ -105,7 +105,7 @@ function App() {
       <Footer />
     </Router>
       </Provider>
-      </div>
+      {/* </div> */}
     </div>
       
   );

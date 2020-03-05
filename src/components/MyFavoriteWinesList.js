@@ -3,6 +3,8 @@ import {
     Redirect
   } from "react-router-dom"; 
 import StarRatingComponent from 'react-star-rating-component';
+import { actionDelWine, getPersonalWines } from '../actions';
+
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
@@ -28,9 +30,11 @@ export default class MyFavoriteWines extends React.Component {
     })
     }
 
-    _handleDel= (event, index) => {
+    _handleDel= (event, wineId, index) => {
         event.preventDefault();
-        this.props.handleDel(this.props.winelist, index);
+        this.props.handleDel(this.props.winelist.wines, wineId, index);
+
+        // this.props.handleDel(this.props.winelist, index);
     }
     render() {
         console.log(this.props)
@@ -70,7 +74,7 @@ export default class MyFavoriteWines extends React.Component {
                                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                                 </li>
                                 {/* <input type="submit" value="Edit" className="wine-edit" /> */}
-                                <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, i)} />
+                                <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} />
 
                                 </div>
                             </ul>

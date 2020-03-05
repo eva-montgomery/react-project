@@ -36,7 +36,7 @@ function mapDispatchToProps(dispatch) {
             formData.append('wine_name', NewWine.wine);
             formData.append('wine_type', NewWine.type);
             formData.append('wine_price', NewWine.price);
-            formData.append('wine_store', NewWine.store);
+            formData.append('wine_store', NewWine.shop);
             formData.append('comments', NewWine.comment);
             formData.append('wine_rating', NewWine.rating);
 

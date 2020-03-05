@@ -103,7 +103,7 @@ export default class AllWinesList extends React.Component {
                                 </li>
                                 {/* <input type="submit" value="Edit" className="wine-edit" /> */}
 
-                                <input type="button" value="❤️" onClick={(event)=> this._handleFavorite(event, m.id)} />
+                                <input type="button" className="fav-button" value="❤️" onClick={(event)=> this._handleFavorite(event, m.id)} />
 
                                 {/* <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} /> */}
 

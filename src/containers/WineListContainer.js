@@ -40,8 +40,8 @@ function mapDispatchToProps(dispatch) {
             }).then( resp => {
                 return resp.data;
             });
-            console.log(deleted)
-            if (deleted.success) {
+            console.log(deleted.deletedWine)
+            if (deleted.deletedWine) {
                 dispatch(actionDelWine(winelist, wineId, index))
 
             } 
