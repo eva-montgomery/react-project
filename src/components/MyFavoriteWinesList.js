@@ -81,8 +81,7 @@ export default class MyFavoriteWines extends React.Component {
                             </div>
                     ))
                 }
-                {/* {!this.state.isLoggedIn && <Redirect to ="/"/>}  */}
-
+                       {this.props.loginStatus.isLoggedIn == false ? <Redirect to ="/"/> : ""}   
                 </div>
 
             </div>

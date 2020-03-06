@@ -9,7 +9,8 @@ import { actionDelWine } from '../actions';
 
 function mapStateToProps(state) {
     return {
-        winelist: state
+        winelist: state,
+        loginStatus: state.user
     }
 }
 

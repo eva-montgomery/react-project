@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-import WineForm from '../components/WineForm';
+import WineForm from '../components/EditWineForm';
 import { actionAddWine, getPersonalWines } from '../actions';
  
 axios.defaults.withCredentials = true;
@@ -49,7 +49,7 @@ function mapDispatchToProps(dispatch) {
 
             const addNewWine = await axios({
                 method: 'post',
-                url: "/api/wines/create",
+                url: "/api/editwines",
                 headers: {
                     'Content-Type': 'multipart/form-data',
                   },

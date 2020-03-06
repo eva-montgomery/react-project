@@ -31,7 +31,8 @@ function mapStateToProps(state) {
     }
     
     return {
-        winelist: getFavWines
+        winelist: getFavWines,
+        loginStatus: state.user
     }   
 }
 

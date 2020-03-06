@@ -1,4 +1,6 @@
 import React from 'react';
+// import SearchBar from '../containers/SearchContainer';
+
 import {
     Redirect
   } from "react-router-dom"; 
@@ -7,12 +9,13 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 
  
-
 export default class AllWinesList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            winelist: []
+            winelist: [],
+            // searchText: '',
+
         }
     }
     async componentDidMount() {
@@ -49,7 +52,13 @@ export default class AllWinesList extends React.Component {
     //     console.log(deleted)
     // }
 
-    
+    _setSearchText = (searchText) => {
+        this.setState({
+            searchText
+        }, () => {
+            console.log('updated search text');
+        });   
+    }
 
     _handleFavorite= async (event, wineId) => {
         const favorites = await axios({
@@ -72,11 +81,17 @@ export default class AllWinesList extends React.Component {
             <div>
     
                 <div className="rated-wines-title">All rated wines:</div>
+                {/* <SearchBar 
+                    handleChange={this._setSearchText}
+                    text={this.state.searchText} 
+                /> */}
                 <div className="wine-list-container">
                 {
                     
                     this.state.winelist.map( (m, i) => (
                         <div className="rated-wine-cards"> 
+
+           
                             <ul> 
                                 <div key={i}>{m.wine_name}
                                 <li key={i}>Type: {m.wine_type}
@@ -112,7 +127,7 @@ export default class AllWinesList extends React.Component {
                             </div>
                     ))
                 }
-                {/* {!this.state.isLoggedIn && <Redirect to ="/"/>}  */}
+                       {this.props.loginStatus.isLoggedIn == false ? <Redirect to ="/"/> : ""}   
 
                 </div>
 

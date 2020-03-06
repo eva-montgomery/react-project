@@ -18,7 +18,8 @@ export default class WineSearch extends React.Component {
         super(props)
         this.state = {
             text: '',
-            wineSearchResults: []
+            wineSearchResults: [],
+            
         };
     }
     render() {

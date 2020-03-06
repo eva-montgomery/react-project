@@ -2,7 +2,7 @@
 [ ] - edit Profile information
 [x] - add new wine
 [ ] - edit wine
-[ ] - delete wine
+[O] - delete wine --> deletes from all users
 [x] - logout
 [ ] - multer for image upload
 [x] - require login

@@ -11,7 +11,8 @@ export default class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            profile: []
+            profile: [],
+            
         };
     }
 
@@ -24,7 +25,8 @@ export default class Profile extends React.Component {
             return resp.data;
         });
     this.setState({
-        profile: myProfileInfo.profile
+        profile: myProfileInfo.profile,
+        
     })
     }
     // _handleProfile = (event) => {

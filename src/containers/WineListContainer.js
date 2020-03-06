@@ -15,7 +15,7 @@ function mapStateToProps(state) {
 
     return {
         winelist: state,
-
+        loginStatus: state.user
     }   
 }
 
@@ -54,7 +54,7 @@ function mapDispatchToProps(dispatch) {
                 console.log(resp)
                 return resp.data.wineList;
             });
-            if (myWines.length > 0) {
+            if (myWines && myWines.length > 0) {
                 console.log('calling dispatch')
                 dispatch(getPersonalWines(myWines))
             }

@@ -4,7 +4,7 @@ import {
   } from "react-router-dom"; 
 import WineRating from '../WineRating'
 
-export default class WineForm extends React.Component {
+export default class EditWineForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,14 +22,11 @@ export default class WineForm extends React.Component {
         return (
             <div>
             <div className="main-content">
-          <h3>Hi Wine-Lover 🍷</h3>
+          <h3>Edit your wine here 🍷</h3>
           <br></br>
-        <p>Welcome to Wine-O-Clock - your personal wine rating application!</p> 
+        <p>Made a mistake? Changed your mind about a certain Wine?</p> 
        
-        <p>Add the wines you bought to the form below and give them a wine-rating from 1-5, so every time you go to the store you can look in your app and check if you have already tried this wine!
-        <p>To view all rated wines by all users, you can simply click here. See a wine you want to try? Add it to your favorite list.</p>
-        </p>
-        <h4>And remember: It's Wine-O-Clock somewhere! Cheers!</h4>
+        <p>No problem! Update your Wine right here!</p>
       
       </div>
             <div className="wine-form-container">
@@ -38,34 +35,34 @@ export default class WineForm extends React.Component {
         
                 <input className="wine-input"
                      onChange={this._handleWine}
-                    value={this.state.wine} placeholder="Wine"
+                    value="${wine_name}" placeholder="Wine"
                     /> 
                 <input className="wine-input"
                      onChange={this._handleType}
-                    value={this.state.type} placeholder="Type"
+                    value="${wine_type}" placeholder="Type"
                     />     
 
                 <input className="wine-input"
                      onChange={this._handlePrice}
-                    value={this.state.price} placeholder="Price"
+                    value="${wine_price}" placeholder="Price"
                     />  
                 <input className="wine-input"
                      onChange={this._handleShop}
-                    value={this.state.shop} placeholder="Bought at"
+                    value="${wine_store}" placeholder="Bought at"
                     /> <br></br>
 
                    <label for="wine-input">Upload Wine Label:</label>
                    <br></br><input type="file" className="wine-input-label" 
                        accept="image/png, image/jpeg, image/jpg"
                      onChange={this._handleLabel}
-                    // value={this.state.label} 
+                    value="${wine_label}"
                     />   
                 <input className="wine-input"
                      onChange={this._handleComment}
-                    value={this.state.comment} placeholder="Comments"
+                    value="${comments}" placeholder="Comments"
                     />  
 
-                <WineRating className="wine-glasses" onChange={this._handleRating}/>
+                <WineRating className="wine-glasses" onChange={this._handleRating} value="${wine_rating}"/>
 
                     <input type="submit" value="Add a new wine" className="wine-submit" />
                     
