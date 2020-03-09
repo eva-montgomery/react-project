@@ -1,22 +1,9 @@
 import React from 'react';
 
+import SearchBar from "../components/Search";
 
-SearchBar.defaultProps = {
-    text: 'default search text'
+const ExampleComponent = (props) => {
+  return(
+    <SearchBar searchBoxName={"userNameSearch"} onSearchTermChange={this.onSearch} />
+   )
 }
-
-function SearchBar({
-    text,
-    handleChange
-}) {
-    return (
-        <input 
-          onChange={(event) => {
-            handleChange(event.target.value)
-          }}
-          value={text} 
-        />
-    );
-}
-
-export default SearchBar;

@@ -3,6 +3,7 @@ import {
     Redirect
   } from "react-router-dom"; 
 import StarRatingComponent from 'react-star-rating-component';
+
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
@@ -44,7 +45,18 @@ export default class WineList extends React.Component {
         //     return resp.data;
         // });
     }
-
+    _handleEdit= async (event, wineId) => {
+        const editWine = await axios({
+            method: 'post',
+            url: "/api/editwines",
+            data: {
+                wine_id: wineId
+            }
+        }).then( resp => {
+            return resp.data;
+        });
+        console.log(editWine)
+    }
 
     render() {
         console.log(this.state)
@@ -57,14 +69,15 @@ export default class WineList extends React.Component {
             
             <div>
     
-                <div className="rated-wines-title">Your rated wines:</div>
+                <div className="rated-wines-title">My rated wines:</div>
                 <div className="wine-list-container">
                 {
                     
                     this.props.winelist.wines.map( (m, i) => (
                         <div key={`wine-${m.wine_name}-${i}`}className="rated-wine-cards"> 
                             <ul> 
-                                <div>{m.wine_name}
+                                <div>
+                                    <div className="wine-name"> {m.wine_name} </div>
                                 <li>Type: {m.wine_type}
                                 </li>
                                 <li>Price: {m.wine_price}
@@ -85,7 +98,8 @@ export default class WineList extends React.Component {
                                         starColor="#f00"
                                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                                 </li>
-                                <input type="submit" value="Edit" className="wine-edit" />
+                                <input type="submit" value="Edit" className="wine-edit" 
+                                onClick={(event) => this._handleEdit(event, m.id)}  />
                                 
                                 <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} />
 

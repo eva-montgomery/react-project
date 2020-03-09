@@ -20,13 +20,16 @@ function mapDispatchToProps(dispatch) {
         handleSubmit: async (query) => {
             // dispatch(actionLoading(true));
             console.log(query)
-      
-           const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${query}`, {
-               headers: {
-                Authorization: "Token 17cfc1a827957c96b7b2284ab656b740a90e358c",
-                'X-Requested-With': 'XMLHttpRequest' 
-               }
-           })
+            
+           const results = await Axios.get('/api/mywines=${query}') 
+        //    const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${query}`
+        //    , {
+        //        headers: {
+        //         Authorization: "Token 17cfc1a827957c96b7b2284ab656b740a90e358c",
+        //         'X-Requested-With': 'XMLHttpRequest' 
+        //        }
+        //    }
+        //    )
            console.log(results);
            console.log(results.data.results)
             dispatch(actionResults(results.data.results));

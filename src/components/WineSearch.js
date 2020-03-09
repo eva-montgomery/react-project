@@ -28,14 +28,14 @@ export default class WineSearch extends React.Component {
             <div>
                 <div className="wine-search-container">
                     <div className="wine-search-box">
-                    <div className="wine-search-text">Need inspiration? Search for new wines online!</div>
                         <form onSubmit={this._handleSubmit} >
                             <input
                                 className="wine-input"
                                 value={this.state.text}
+                                placeholder="Search"
                                  onChange={this._handleChange} 
                              />
-                        <button className="wine-search-btn">Search for wines online</button>
+                        <button className="wine-search-btn">Search</button>
 
                         </form>
                     </div>

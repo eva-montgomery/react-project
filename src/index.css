@@ -3,6 +3,7 @@
 }
 
 html {
+
   height: 100%;
   width: 100%;
 
@@ -221,7 +222,7 @@ code {
     opacity: 0.85;
     /* background-color: rgb(55, 175, 175); */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 350px;
+    width: 350px;
     margin: 20px;
     padding-top: 20px;
     text-align: center;
@@ -243,6 +244,7 @@ code {
     padding: 5px;
     margin-bottom: 10px;
     justify-content: flex-end;
+    border: none;
 
   }
 
@@ -251,6 +253,8 @@ code {
   background-color: rgb(196, 12, 54);
   color: white;
   padding: 5px;
+  border: none;
+
 
 
  } 
@@ -265,13 +269,17 @@ code {
 
 .wine-list-container {
   display: flex;
+  align-items: center;
   align-content: space-between;
   justify-content: center;
-  display: flex;
-  display:inline-block;
+  display: inline-block;
   align-items: center;
   flex: 1 0 auto;
-  justify-content: center;
+  max-width: 900px;
+  flex-wrap: wrap;
+
+  
+
 
   
 }
@@ -279,7 +287,6 @@ code {
 .rated-wine-cards {
 
   flex-flow: row wrap;
-
   justify-content: center;
   align-content: center;
   flex-direction: row;
@@ -288,12 +295,13 @@ code {
   flex-direction: row;
   align-items: center;
   flex: 0 0 auto;
-  justify-content: center;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
   background-color: white;
   /* max-width: 200px;
   min-width: 200px;
@@ -304,7 +312,14 @@ code {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  vertical-align: middle;
+
+
   
+}
+
+.wine-name {
+  font-weight: bolder;
 }
 
 .label-container  {
@@ -374,6 +389,10 @@ ul {
   overflow: hidden;
 }
 
+.container-text {
+  font-size: 20px;
+}
+
 .fav-button {
   border: none;
 }
@@ -390,6 +409,9 @@ ul {
   bottom: 0;
   overflow: hidden;
   height: 80px;
+  width: 100%;
+  position: scroll;
+  /* height: 50px; */
 
 }
 
@@ -411,7 +433,19 @@ ul {
  }
  .footer {
    font-size: 14px;
-
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: rgb(235, 121, 121);
+   padding-top: 10px;
+   font-family: Arial, Helvetica, sans-serif;
+   flex-shrink: 0;
+   left: 0;
+   bottom: 0;
+   overflow: hidden;
+   height: 80px;
+   width: 100%;
+   position: scroll;
 
  }
  .content-container {
@@ -437,6 +471,19 @@ ul {
  }
  .footer {
    font-size: 14px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: rgb(235, 121, 121);
+   padding-top: 10px;
+   font-family: Arial, Helvetica, sans-serif;
+   flex-shrink: 0;
+   left: 0;
+   bottom: 0;
+   overflow: hidden;
+   height: 80px;
+   width: 100%;
+   position: scroll;
 
  }
  .content-container {
@@ -461,7 +508,19 @@ ul {
  }
  .footer {
   font-size: 14px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(235, 121, 121);
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  flex-shrink: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  height: 80px;
+  width: 100%;
+  position: scroll;
  }
  .content-container {
   height: 100%;

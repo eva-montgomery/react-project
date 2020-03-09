@@ -81,6 +81,7 @@ class App extends React.Component {
               <Route path="/home">
               {/* <Content /> */}
                 <WineForm />
+                <WineSearch />
                 <WineList />
               </Route>
               <Route path="/profile" >

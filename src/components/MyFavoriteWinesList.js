@@ -39,7 +39,12 @@ export default class MyFavoriteWines extends React.Component {
     render() {
         console.log(this.props)
         console.log(this.state.winelist)
-        return ( 
+        // if (this.props.winelist.length === 0) { 
+        //     return <div> <div className="rated-wines-title">You have not added any wines to your favorites yet</div>
+        //     <p>Click here to view all rated wines and select your favirites by clicking the ❤️</p></div>
+        // } else {
+    
+            return ( 
             
             <div>
     
@@ -49,9 +54,10 @@ export default class MyFavoriteWines extends React.Component {
                     
                     this.state.winelist.map( (m, i) => (
                         <div className="rated-wine-cards"> 
-                            <ul> 
-                                <div key={i}>{m.wine_name}
-                                <li key={i}>Type: {m.wine_type}
+                            <ul> <div> 
+                                <div className="wine-name" key={i}>{m.wine_name}   </div>
+                                <li key={i}>Type: {m.wine_type} 
+                             
                                 </li>
                                 <li key={i}>Price: {m.wine_price}
                                 </li>
@@ -86,6 +92,8 @@ export default class MyFavoriteWines extends React.Component {
 
             </div>
         )
+            // }
+    
     } 
 }
 

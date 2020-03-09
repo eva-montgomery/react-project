@@ -18,6 +18,7 @@ export default class EditWineForm extends React.Component {
 
         };
     }
+ 
     render() {
         return (
             <div>

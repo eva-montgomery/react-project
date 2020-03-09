@@ -39,7 +39,7 @@ render() {
     <div>
 <div className="profile-information">My profile information:</div>
 {/* { 
-this.state.profile.map( (m, i) => (
+this.state.profile.myProfileInfo.map( (m, i) => (
     <ul>
          <li key={i}>E-Mail: {m.email}</li>
          <li key={i}>Password: {m.password}</li>

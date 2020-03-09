@@ -1,59 +1,27 @@
-// import React from 'react';
-// import {
-//     Redirect
-//   } from "react-router-dom"; 
-
-
-// import axios from 'axios';
-// axios.defaults.withCredentials = true;
-
-// export default class SearchBar extends React.Component {
-
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             searchText: '',
-//             winelist: []
-//         }
-//     }
-//     _setSearchText = (searchText) => {
-//         this.setState({
-//             searchText
-//         }, () => {
-//             console.log('updated search text');
-//         });   
-//     }
-
-//     render() {
-//         return (
-//             <input 
-//               onChange={(event) => {
-//                 handleChange(event.target.value)
-//               }}
-//               value={text} 
-//             />
-//         );
-//     }
-// }
-
 import React from 'react';
 
-SearchBar.defaultProps = {
-    text: 'default search text'
+class SearchBar extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={term:''};
+  }
+  onInputChange(term){
+    const name = this.props.searchBoxName || undefined
+    this.setState({term});
+    if(this.props.onSearchTermChange){
+      this.props.onSearchTermChange({name,term})
+    }
+  }
+    render() {
+      const name = this.props.searchBoxName || undefined
+        return (
+            <div className="search-box">
+              
+              <input name={name} className="search-input" id="search" type="text" placeholder="Search" value={this.state.term}
+                onChange={event=>this.onInputChange(event.target.value)} onKeyPress={this.props.onKeyPress|| null}/>
+            </div>
+        );
+    }
 }
-
-function SearchBar({
-    text,
-    handleChange
-}) {
-    return (
-        <input 
-          onChange={(event) => {
-            handleChange(event.target.value)
-          }}
-          value={text} 
-        />
-    );
-}
-
+ 
 export default SearchBar;
