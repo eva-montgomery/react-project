@@ -30,6 +30,7 @@ import EditWineForm from './containers/EditWineFormContainer';
 // import SearchBar from './components/Search';
 import WineSearchResults from './containers/WineSearchContainer';
 import WineSearch from './containers/WineSearchContainer';
+import MyWineSearch from './containers/MyWineSearchContainer';
 import { Provider } from 'react-redux';
 
 
@@ -68,7 +69,6 @@ class App extends React.Component {
               <Route path="/home">
               {/* <Content /> */}
                 <WineForm />
-                <WineSearch />
                 <WineList />     
               </Route>
               <Route 

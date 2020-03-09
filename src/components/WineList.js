@@ -1,4 +1,7 @@
 import React from 'react';
+import MyWineSearch from '../containers/MyWineSearchContainer';
+
+
 import {
     Redirect, useHistory, Link
   } from "react-router-dom"; 
@@ -76,7 +79,9 @@ export default class WineList extends React.Component {
             
             <div>
     
-                <div className="rated-wines-title">My rated wines:</div>
+                <div className="rated-wines-title">My rated wines:
+                
+                </div><MyWineSearch />
                 <div className="wine-list-container">
                 {
                     

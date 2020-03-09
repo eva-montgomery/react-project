@@ -2,7 +2,7 @@ import {
     connect
 } from 'react-redux';
 
-import WineSearch from '../components/WineSearch';
+import MyWineSearch from '../components/MyWineSearch';
 
 import { 
     actionSearch,
@@ -23,7 +23,7 @@ function mapDispatchToProps(dispatch) {
             
            const results = await Axios({
             method: 'post',
-            url: "/api/search",
+            url: "/api/mysearch",
             data: {
               searchText: query
 
@@ -38,7 +38,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const reduxConnector = connect(null, mapDispatchToProps);
-export default reduxConnector(WineSearch);
+export default reduxConnector(MyWineSearch);
 
 
 // api to list all types from a country which I can tick off after I have tried them

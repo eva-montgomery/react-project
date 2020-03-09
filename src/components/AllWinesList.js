@@ -1,5 +1,7 @@
 import React from 'react';
 // import SearchBar from '../containers/SearchContainer';
+import WineSearchResults from '../containers/WineSearchContainer';
+import WineSearch from '../containers/WineSearchContainer';
 
 import {
     Redirect
@@ -14,7 +16,7 @@ export default class AllWinesList extends React.Component {
         super(props);
         this.state = {
             winelist: [],
-            // searchText: '',
+            // searchTexts: '',
 
         }
     }
@@ -84,7 +86,10 @@ export default class AllWinesList extends React.Component {
                 <div className="container-text">Take a look at how other users rated wines.</div>
                 <div className="container-text">See a wine you like?</div>
                 <div className="container-text">Click the ❤️ to add a wine to your favorites!</div>
+                <WineSearch />
+
                 </div>
+
                 {/* <SearchBar 
                     handleChange={this._setSearchText}
                     text={this.state.searchText} 
