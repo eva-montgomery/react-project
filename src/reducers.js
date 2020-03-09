@@ -10,7 +10,8 @@ import {
     LOGIN, 
     LOGOUT,
     PROFILE,
-    EDIT_PROFILE
+    EDIT_PROFILE,
+    EDIT_WINE
 
 } from "./actions"
 
@@ -33,6 +34,9 @@ export function wines(state=[], action) {
         case DEL_WINE:
             newState.splice(action.payload.index, 1);
             break;
+        case EDIT_WINE:
+            return action.payload.wines;
+            break;   
         case GET_PERSONAL_WINES:
             return action.payload.wines
             break;

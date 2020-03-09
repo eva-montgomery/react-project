@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-import WineForm from '../components/EditWineForm';
+import EditWineForm from '../components/EditWineForm';
 import { actionAddWine, getPersonalWines } from '../actions';
  
 axios.defaults.withCredentials = true;
@@ -35,6 +35,7 @@ function mapDispatchToProps(dispatch) {
             let blob = await fetch(NewWine.label).then(r => r.blob());
             let formData = new FormData();
             formData.append('wine_label', blob);
+            formData.append('id', NewWine.id);
             formData.append('wine_name', NewWine.wine);
             formData.append('wine_type', NewWine.type);
             formData.append('wine_price', NewWine.price);
@@ -47,7 +48,7 @@ function mapDispatchToProps(dispatch) {
 
 
 
-            const addNewWine = await axios({
+            const editWine = await axios({
                 method: 'post',
                 url: "/api/editwines",
                 headers: {
@@ -67,7 +68,7 @@ function mapDispatchToProps(dispatch) {
             }).then( resp => {
                 return resp.data;
             });
-            if (addNewWine.success) {
+            if (editWine.success) {
                 // dispatch(actionAddWine(NewWine))
                 const myWines = await axios({
                     method: 'get',
@@ -86,4 +87,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
-export default reduxConnector(WineForm);
+export default reduxConnector(EditWineForm);

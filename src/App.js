@@ -14,19 +14,6 @@ import Header from './Header';
 // import Nav from './components/Nav';
 import Content from './Content';
 import Footer from './Footer';
-
-// Routes to be added
-
-
-// import 
-// /ratedwines
-// profile 
-// import Profile './Profile'
-// import ViewRatedWines from './ViewRatedWines';
-// /myfavorites
-// import MyFavorites from './MyFavorites';
-
-
 import NavContainer from './containers/NavContainer';
 
 import LoginForm from './containers/LoginFormContainer';
@@ -39,7 +26,7 @@ import WineForm from './containers/WineFormContainer';
 import WineList from './containers/WineListContainer';
 import AllWinesList from './containers/AllWinesListContainer';
 import MyFavoriteWines from './containers/MyFavoriteWinesListContainer';
-
+import EditWineForm from './containers/EditWineFormContainer';
 // import SearchBar from './components/Search';
 import WineSearchResults from './containers/WineSearchContainer';
 import WineSearch from './containers/WineSearchContainer';
@@ -82,8 +69,14 @@ class App extends React.Component {
               {/* <Content /> */}
                 <WineForm />
                 <WineSearch />
-                <WineList />
+                <WineList />     
               </Route>
+              <Route 
+                path="/edit"
+                render={(routeProps) => (
+                  <EditWineForm {...routeProps} />
+                )}
+              />
               <Route path="/profile" >
                 <Profile /> 
               </Route>

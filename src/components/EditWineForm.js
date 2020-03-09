@@ -8,6 +8,7 @@ export default class EditWineForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             wine: '',
             type: '',
             price: '',
@@ -18,66 +19,102 @@ export default class EditWineForm extends React.Component {
 
         };
     }
+
+    componentDidMount() {
+        if (typeof this.props.location.params === 'object') {
+            const {
+            wineId, 
+            wine_name,
+            wine_type, 
+            wine_price,
+            wine_store,
+            comments,
+            wine_label,
+            wine_rating} = this.props.location.params
+            this.setState({
+                id: wineId,
+                wine: wine_name,
+                type: wine_type,
+                price: wine_price,
+                shop: wine_store,
+                label: wine_label,
+                comment: comments,
+                label: wine_label,
+                rating: wine_rating
+            })
+        }
+    }
  
     render() {
-        return (
-            <div>
-            <div className="main-content">
-          <h3>Edit your wine here 🍷</h3>
-          <br></br>
-        <p>Made a mistake? Changed your mind about a certain Wine?</p> 
-       
-        <p>No problem! Update your Wine right here!</p>
+        console.log(this.props)
+        console.log(typeof this.props.location.params)
+        if (typeof this.props.location.params === 'object') {
+            const {        
+            wine,
+            type,
+            price,
+            shop,
+            label,
+            comment,
+            rating} = this.state
+            console.log(this.props.location.params)
+            return (
+                <div>
+                    <div className="main-content">
+                        <h3>Edit your wine here 🍷</h3>
+                        <br></br>
+                        <p>Made a mistake? Changed your mind about a certain Wine?</p> 
+                        <p>No problem! Update your Wine right here!</p>
       
-      </div>
-            <div className="wine-form-container">
-            <div className="wine-box"> 
-                <form onSubmit={this._handleSubmit}>
-        
-                <input className="wine-input"
-                     onChange={this._handleWine}
-                    value="${wine_name}" placeholder="Wine"
-                    /> 
-                <input className="wine-input"
-                     onChange={this._handleType}
-                    value="${wine_type}" placeholder="Type"
-                    />     
+                    </div>
+                    <div className="wine-form-container">
+                        <div className="wine-box"> 
+                            <form onSubmit={this._handleSubmit}>
+                                <input className="wine-input"
+                                onChange={this._handleWine}
+                                value={`${wine}`} placeholder="Wine"
+                                 /> 
+                                 <input className="wine-input"
+                                onChange={this._handleType}
+                                value={`${type}`} placeholder="Type"
+                                />     
+                                <input className="wine-input"
+                                onChange={this._handlePrice}
+                                value={`${price}`} placeholder="Price"
+                                />  
+                                <input className="wine-input"
+                                onChange={this._handleShop}
+                                value={`${shop}`} placeholder="Bought at"
+                                /> <br></br>
 
-                <input className="wine-input"
-                     onChange={this._handlePrice}
-                    value="${wine_price}" placeholder="Price"
-                    />  
-                <input className="wine-input"
-                     onChange={this._handleShop}
-                    value="${wine_store}" placeholder="Bought at"
-                    /> <br></br>
+                                <label for="wine-input">Upload Wine Label:</label>
+                                <br></br><input type="file" className="wine-input-label" 
+                                accept="image/png, image/jpeg, image/jpg"
+                                onChange={this._handleLabel}
+                                // value={`${wine_label}`}
+                                />  
+                                <img src={`/images/${label}`} alt="wine label" className="label-container"/>
+                                <input className="wine-input"
+                                onChange={this._handleComment}
+                                value={`${comment}`} placeholder="Comments"
+                                />   
 
-                   <label for="wine-input">Upload Wine Label:</label>
-                   <br></br><input type="file" className="wine-input-label" 
-                       accept="image/png, image/jpeg, image/jpg"
-                     onChange={this._handleLabel}
-                    value="${wine_label}"
-                    />   
-                <input className="wine-input"
-                     onChange={this._handleComment}
-                    value="${comments}" placeholder="Comments"
-                    />  
+                                <WineRating className="wine-glasses" onChange={this._handleRating} value={`${rating}`}/>
 
-                <WineRating className="wine-glasses" onChange={this._handleRating} value="${wine_rating}"/>
+                                <input type="submit" value="Update" className="wine-submit" />
+                            </form>
 
-                    <input type="submit" value="Add a new wine" className="wine-submit" />
-                    
-
-                </form>
-                {this.props.loginStatus.isLoggedIn == false ? <Redirect to ="/"/> : ""}   
-
-            </div>
-            </div>
-            </div>
-        )
+                        </div>
+                     </div>
+                 </div>
+            )
+        } else {
+            return <Redirect to = "/home" />
+        }
     }
     _handleSubmit = (event) => {
         event.preventDefault();
+        console.log(this.state.label)
         console.log(this.state)
         this.props.handleSubmit(this.state);
         this.setState({
@@ -89,6 +126,7 @@ export default class EditWineForm extends React.Component {
                 comment: '',
                 rating: 5})
     }
+  
 
      
     _handleWine = (event) => {

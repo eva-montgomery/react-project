@@ -38,11 +38,11 @@ export default class MyFavoriteWines extends React.Component {
     }
     render() {
         console.log(this.props)
-        console.log(this.state.winelist)
-        // if (this.props.winelist.length === 0) { 
-        //     return <div> <div className="rated-wines-title">You have not added any wines to your favorites yet</div>
-        //     <p>Click here to view all rated wines and select your favirites by clicking the ❤️</p></div>
-        // } else {
+        console.log(this.props.winelist)
+        if (this.state.winelist.length === 0) { 
+            return <div> <div className="rated-wines-title">You have not added any wines to your favorites yet</div>
+            <p>Click here to view all rated wines and select your favirites by clicking the ❤️</p></div>
+        } else {
     
             return ( 
             
@@ -92,7 +92,7 @@ export default class MyFavoriteWines extends React.Component {
 
             </div>
         )
-            // }
+            }
     
     } 
 }

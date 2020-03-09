@@ -1,5 +1,6 @@
 export const ADD_WINE = 'ADD_WINE';
 export const DEL_WINE = 'DEL_WINE';
+export const EDIT_WINE = 'EDIT_WINE';
 export const GET_PERSONAL_WINES = 'GET_PERSONAL_WINES';
 
 export const SEARCH = 'SEARCH';
@@ -26,6 +27,15 @@ export function actionAddWine(wine) {
 export function getPersonalWines(wines) {
     return ({
         type: GET_PERSONAL_WINES,
+        payload: {
+            wines
+        }
+    })
+}
+
+export function editWine(wines) {
+    return ({
+        type: EDIT_WINE,
         payload: {
             wines
         }

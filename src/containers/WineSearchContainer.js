@@ -21,7 +21,7 @@ function mapDispatchToProps(dispatch) {
             // dispatch(actionLoading(true));
             console.log(query)
             
-           const results = await Axios.get('/api/mywines=${query}') 
+           const results = await Axios.get(`/api/mywines=${query}`) 
         //    const results = await Axios.get(`https://cors-anywhere.herokuapp.com/https://api.globalwinescore.com/globalwinescores/latest/?wine=${query}`
         //    , {
         //        headers: {
