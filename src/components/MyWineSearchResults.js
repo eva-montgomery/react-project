@@ -7,9 +7,9 @@ import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-export default function MyWineSearchResults({ MyWineSearchResults }) {
+export default function MyWineSearchResults({ myWineSearchResults }) {
     console.log("WINESEARCHRESULTS")
-   return (MyWineSearchResults && MyWineSearchResults.length > 0) ? MyWineSearchResults.map((m, i) => {
+   return (myWineSearchResults && myWineSearchResults.length > 0) ? myWineSearchResults.map((m, i) => {
         return (
             <div key={`wine-${m.wine_name}-${i}`}className="rated-wine-cards"> 
             <ul> 

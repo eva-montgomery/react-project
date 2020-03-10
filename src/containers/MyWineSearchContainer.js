@@ -35,7 +35,7 @@ function mapDispatchToProps(dispatch) {
         
            console.log(results);
            console.log(results.data.results)
-            dispatch(actionResults(results.data.results));
+            dispatch(actionResults(results.data.wineSearch));
             // dispatch(actionLoading(false));
         }
     }
