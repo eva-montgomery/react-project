@@ -78,10 +78,11 @@ export default class WineList extends React.Component {
         return ( 
             
             <div>
-    
+<div className="rated-wines-title">Search for wines:
+                </div>    <MyWineSearch />
                 <div className="rated-wines-title">My rated wines:
+                </div>
                 
-                </div><MyWineSearch />
                 <div className="wine-list-container">
                 {
                     

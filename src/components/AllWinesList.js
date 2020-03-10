@@ -81,12 +81,12 @@ export default class AllWinesList extends React.Component {
         return ( 
             
             <div>
-            <div>
-                <div className="rated-wines-title">All rated wines: </div>
+            <div> 
                 <div className="container-text">Take a look at how other users rated wines.</div>
                 <div className="container-text">See a wine you like?</div>
                 <div className="container-text">Click the ❤️ to add a wine to your favorites!</div>
                 <WineSearch />
+                <div className="rated-wines-title">All rated wines: </div>
 
                 </div>
 

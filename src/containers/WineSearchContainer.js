@@ -13,7 +13,11 @@ import {
 import Axios from 'axios';
 
 
-
+function mapStateToProps(state) {
+    return {
+        winelist: state,
+    }   
+}
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -31,13 +35,13 @@ function mapDispatchToProps(dispatch) {
         
            console.log(results);
            console.log(results.data.results)
-            dispatch(actionResults(results.data.results));
+            dispatch(actionResults(results.data.wineSearch));
             // dispatch(actionLoading(false));
         }
     }
 }
 
-const reduxConnector = connect(null, mapDispatchToProps);
+const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
 export default reduxConnector(WineSearch);
 
 

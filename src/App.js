@@ -18,7 +18,7 @@ import NavContainer from './containers/NavContainer';
 
 import LoginForm from './containers/LoginFormContainer';
 import SignUpForm from './containers/SignUpFormContainer';
-import Profile from './containers/ProfileContainer'
+// import Profile from './containers/ProfileContainer'
 import Logout from './containers/LogoutContainer';
 import { createStore, combineReducers } from 'redux';
 import { wines, wineSearch, user } from './reducers';
@@ -77,9 +77,9 @@ class App extends React.Component {
                   <EditWineForm {...routeProps} />
                 )}
               />
-              <Route path="/profile" >
+              {/* <Route path="/profile" >
                 <Profile /> 
-              </Route>
+              </Route> */}
             </Switch>
                 {/* <WineSearch /> */}
             <Footer />

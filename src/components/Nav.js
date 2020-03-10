@@ -65,9 +65,9 @@ class hamburgerMenuPage extends Component {
                   <MDBNavItem>
                     <MDBNavLink to='/favorites'>My Favorites</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem>
+                  {/* <MDBNavItem>
                     <MDBNavLink to='/profile'>Profile</MDBNavLink>
-                  </MDBNavItem>
+                  </MDBNavItem> */}
 
 
                   <MDBNavItem>

@@ -4,7 +4,7 @@ import {
 } from 'react-redux';
 
 import WineSearchResults from '../components/WineSearchResults';
-
+import { actionDelWine } from '../actions';
 
 function mapStateToProps(state) {
     return {
@@ -12,5 +12,14 @@ function mapStateToProps(state) {
     }
 }
 
-const reduxConnector = connect(mapStateToProps);
+
+function mapDispatchToProps(dispatch) {
+    return {
+        handleDel: (winelist, index) => {
+            dispatch(actionDelWine(winelist, index))
+        }
+    }
+}
+
+const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
 export default reduxConnector(WineSearchResults);

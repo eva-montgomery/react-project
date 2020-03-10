@@ -17,7 +17,12 @@ export default class MyFavoriteWines extends React.Component {
             winelist: []
         }
     }
-    async componentDidMount() {
+
+    componentDidMount() {
+        this.getFavWine()
+    }
+     getFavWine = async () => {
+
         const myFavorites = await axios ({
             method:'get',
             url: '/api/favorites'
@@ -30,15 +35,16 @@ export default class MyFavoriteWines extends React.Component {
     })
     }
 
-    _handleDel= (event, wineId, index) => {
+    _handleDel = async (event, wineId, index) => {
         event.preventDefault();
-        this.props.handleDel(this.props.winelist.wines, wineId, index);
+       await this.props.handleDel(this.props.winelist.wines, wineId, index);
+       this.getFavWine()
 
         // this.props.handleDel(this.props.winelist, index);
     }
     render() {
         console.log(this.props)
-        console.log(this.props.winelist)
+        console.log(this.state.winelist)
         if (this.state.winelist.length === 0) { 
             return <div> <div className="rated-wines-title">You have not added any wines to your favorites yet</div>
             <p>Click here to view all rated wines and select your favirites by clicking the ❤️</p></div>

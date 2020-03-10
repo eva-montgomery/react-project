@@ -33,16 +33,12 @@ export default class WineSearch extends React.Component {
                         </form>
                     </div>
                 </div>
-                    <table>
                     
-                    <tbody>
                     <WineSearchResults/> 
-                    </tbody>
                     
                     
                     
-                    </table>
-            </div>
+                </div>
          
         )
     }
