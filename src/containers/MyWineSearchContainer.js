@@ -13,7 +13,11 @@ import {
 import Axios from 'axios';
 
 
-
+function mapStateToProps(state) {
+    return {
+        winelist: state,
+    }   
+}
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -41,4 +45,3 @@ const reduxConnector = connect(null, mapDispatchToProps);
 export default reduxConnector(MyWineSearch);
 
 
-// api to list all types from a country which I can tick off after I have tried them

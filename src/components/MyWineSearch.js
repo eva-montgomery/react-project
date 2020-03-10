@@ -4,26 +4,19 @@ import Axios from 'axios';
 import MyWineSearchResults from '../containers/MyWineSearchResultsContainer'
 
 
-// export default function WineSearch({
-//     handleClick
-// }) {
-//     return (
-
-//         <button onClick={handleClick} className="wine-search-btn">Search for wines online</button>
-//     )
-// }
-
 export default class MyWineSearch extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             text: '',
-            wineSearchResults: [],
+            myWineSearchResults: [],
             
         };
     }
+
+    
     render() {
-        let {wineSearchResults} = this.state
+        let {myWineSearchResults} = this.state
         return (
             <div>
                 <div className="wine-search-container">
@@ -40,15 +33,9 @@ export default class MyWineSearch extends React.Component {
                         </form>
                     </div>
                 </div>
-                    <table>
                     
-                    <tbody>
                     <MyWineSearchResults/> 
-                    </tbody>
-                    
-                    
-                    
-                    </table>
+            
             </div>
          
         )

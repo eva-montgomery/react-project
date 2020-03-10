@@ -47,6 +47,7 @@ function mapDispatchToProps(dispatch) {
             } 
         },
          getWines: async () => {
+
             const myWines = await axios({
                 method: 'get',
                 url: '/api/mywines'

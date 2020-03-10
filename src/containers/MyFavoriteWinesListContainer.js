@@ -10,13 +10,6 @@ import { actionDelWine } from '../actions';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-
-// function mapStateToProps(state) {
-//     return {
-//         winelist: state
-//     }
-// }
-
 function mapStateToProps(state) {
 
     const getFavWines = async () => {
