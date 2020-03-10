@@ -11,7 +11,10 @@ import {
     LOGOUT,
     PROFILE,
     EDIT_PROFILE,
-    EDIT_WINE
+    EDIT_WINE,
+    MY_SEARCH,
+    MY_RESULTS,
+    MY_LOADING
 
 } from "./actions"
 
@@ -70,6 +73,21 @@ export function wineSearch(state=defaultState, action) {
                 ...state,
                 isLoading: action.payload.isLoading
             }
+        case MY_SEARCH:
+            return {
+                ...state,
+                query: action.payload.query,                
+            }            
+        case MY_RESULTS:
+            return {
+                ...state,
+                results: action.payload.wines
+            }
+        case MY_LOADING:
+            return {
+                ...state,
+                isLoading: action.payload.isLoading
+                }    
         default:
             return {
                 ...state,

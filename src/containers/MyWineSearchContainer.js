@@ -5,9 +5,10 @@ import {
 import MyWineSearch from '../components/MyWineSearch';
 
 import { 
-    actionSearch,
-    actionResults,
-    actionLoading,
+    actionMySearch,
+    actionMyResults,
+    actionMyLoading,
+    
 } from '../actions';
 
 import Axios from 'axios';
@@ -35,7 +36,7 @@ function mapDispatchToProps(dispatch) {
         
            console.log(results);
            console.log(results.data.results)
-            dispatch(actionResults(results.data.wineSearch));
+            dispatch(actionMyResults(results.data.wineSearch));
             // dispatch(actionLoading(false));
         }
     }

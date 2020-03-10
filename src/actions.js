@@ -8,6 +8,11 @@ export const SELECT = 'SELECT';
 export const RESULTS = 'RESULTS';
 export const LOADING = 'LOADING';
 
+export const MY_SEARCH = 'MY_SEARCH';
+export const MY_RESULTS = 'MY_RESULTS';
+export const MY_LOADING = 'MY_LOADING';
+
+
 export const LOGIN = 'LOGIN';
 export const SIGNUP = 'SIGNUP';
 export const USERTAKEN = "USERTAKEN";
@@ -73,6 +78,34 @@ export function actionResults(wines) {
 export function actionSearch(query) {
     return {
         type: SEARCH,
+        payload: {
+            query
+        }
+    }
+}
+
+
+export function actionMyLoading(isLoading) {
+    return {
+        type: MY_LOADING,
+        payload: {
+            isLoading
+        }
+    }
+}
+
+export function actionMyResults(wines) {
+    return {
+        type: MY_RESULTS,
+        payload: {
+            wines
+        }
+    } 
+}
+
+export function actionMySearch(query) {
+    return {
+        type: MY_SEARCH,
         payload: {
             query
         }

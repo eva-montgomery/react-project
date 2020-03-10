@@ -4,7 +4,7 @@ import {
 } from 'react-redux';
 
 import WineSearchResults from '../components/WineSearchResults';
-import { actionDelWine } from '../actions';
+import { actionDelWine, actionResults } from '../actions';
 
 function mapStateToProps(state) {
     return {
@@ -17,6 +17,10 @@ function mapDispatchToProps(dispatch) {
     return {
         handleDel: (winelist, index) => {
             dispatch(actionDelWine(winelist, index))
+        },
+        handleClearResults: () => {
+            dispatch(actionResults([]));
+
         }
     }
 }

@@ -47,27 +47,8 @@ function mapDispatchToProps(dispatch) {
 
             } 
         },
-        //     console.log(winelist, index)
-        //     const favWines = await axios({
-        //         method: 'post',
-        //         url: "/api/favorites/",
-        //         data: {
-        //             wine_name: winelist.wine_name,
-        //             wine_type: winelist.wine_type,
-        //             wine_price: winelist.wine_price,
-        //             wine_store: winelist.wine_store,
-        //             wine_label: winelist.wine_label,
-        //             comments: winelist.comments,
-        //             wine_rating: winelist.wine_rating
-        //         }
-        //     }).then( resp => {
-        //         return resp.data;
-        //     });
-        //     if (winelist.success) {
-        //         dispatch(actionDelWine(winelist, index))
 
-        //     } 
-        // }
+
     }
 }
 

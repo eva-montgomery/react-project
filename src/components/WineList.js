@@ -23,6 +23,9 @@ export default class WineList extends React.Component {
     
 
     async componentDidMount() {
+        
+
+
         console.log(this.props)
         console.log(this.props.winelist)
         
@@ -39,7 +42,11 @@ export default class WineList extends React.Component {
     _handleDel= async (event, wineId, index) => {
         console.log(this.props)
         event.preventDefault();
-        this.props.handleDel(this.props.winelist.wines, wineId, index);
+        await this.props.handleDel(this.props.winelist.wines, wineId, index);
+        console.log(this.props)
+        await this.props.getWines();
+        console.log(this.props)
+
         // const deleted = await axios({
         //     method: 'post',
         //     url: "/api/delete",
@@ -78,7 +85,7 @@ export default class WineList extends React.Component {
         return ( 
             
             <div>
-<div className="rated-wines-title">Search for wines:
+<div className="rated-wines-title">Searchwines:
                 </div>    <MyWineSearch />
                 <div className="rated-wines-title">My rated wines:
                 </div>

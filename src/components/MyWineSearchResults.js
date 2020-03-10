@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
     Redirect
   } from "react-router-dom"; 
@@ -7,7 +7,12 @@ import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-export default function MyWineSearchResults({ myWineSearchResults }) {
+export default function MyWineSearchResults({ myWineSearchResults, handleClearResults }) {
+    useEffect(() => {
+        handleClearResults();
+    }, []);
+
+
     console.log("WINESEARCHRESULTS")
    return (myWineSearchResults && myWineSearchResults.length > 0) ? myWineSearchResults.map((m, i) => {
         return (

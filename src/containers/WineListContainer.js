@@ -10,6 +10,8 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 
 function mapStateToProps(state) {
+
+    
     console.log(state)
 
 
@@ -28,9 +30,12 @@ function mapStateToProps(state) {
 //     }
 // }
 
+
+
 function mapDispatchToProps(dispatch) {
     return {
         handleDel: async (winelist, wineId, index) => {
+            console.log(winelist, wineId, index)
             const deleted = await axios({
                 method: 'post',
                 url: "/api/delete",
@@ -44,6 +49,7 @@ function mapDispatchToProps(dispatch) {
             if (deleted.deletedWine) {
                 dispatch(actionDelWine(winelist, wineId, index))
 
+
             } 
         },
          getWines: async () => {
@@ -55,10 +61,10 @@ function mapDispatchToProps(dispatch) {
                 console.log(resp)
                 return resp.data.wineList;
             });
-            if (myWines && myWines.length > 0) {
+            // if (myWines && myWines.length > 0) {
                 console.log('calling dispatch')
                 dispatch(getPersonalWines(myWines))
-            }
+            // }
         }
     
     }
