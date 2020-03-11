@@ -9,7 +9,7 @@ axios.defaults.withCredentials = true;
 
 
 
-export default function WineSearchResults({ wineSearchResults, handleClearResults }) {
+export default function WineSearchResults({ wineSearchResults, handleClearResults, handleFavorite }) {
     useEffect(() => {
         handleClearResults();
     }, []);
@@ -43,7 +43,7 @@ export default function WineSearchResults({ wineSearchResults, handleClearResult
                         starColor="#f00"
                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                 </li>
-                <input type="button" className="fav-button" value="❤️" onClick={(event)=> this._handleFavorite(event, m.id)} />
+                <input type="button" className="fav-button" value="❤️" onClick={(event)=> handleFavorite(event, m.id)} />
                 </div>
 
             </ul>

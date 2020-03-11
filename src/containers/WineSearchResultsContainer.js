@@ -32,16 +32,29 @@ function mapDispatchToProps(dispatch) {
             });
             console.log(deleted.deletedWine)
             if (deleted.deletedWine) {
-                dispatch(actionDelWine(winelist, wineId, index))
+                dispatch(actionDelWine(winelist, index))
             } 
         },
+        handleFavorite: async (event, wineId) => {
+            const favorites = await Axios({
+                method: 'post',
+                url: "/api/addtofavorites",
+                data: {
+                    wine_id: wineId
+                }
+            }).then( resp => {
+                return resp.data;
+            });
+            console.log(favorites)
+        },
+    
         handleClearResults: () => {
             dispatch(actionResults([]));
 
-        },
-
+        }
     }
-}
+    }
+
 
 const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
 export default reduxConnector(WineSearchResults);

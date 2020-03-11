@@ -34,21 +34,21 @@ export default class MyWineSearch extends React.Component {
                     </div>
                 </div>
                     
-                    <MyWineSearchResults/> 
+                    <MyWineSearchResults
+                    doSearch={this._handleSubmit}
+                    /> 
             
             </div>
          
         )
     }
     _handleSubmit = async (event) => {
-        event.preventDefault();
+        event && event.preventDefault();
         this.props.handleSubmit(this.state.text)
         console.log(this.state.text)
       
         
-        this.setState({
-            text: '',
-        })
+
         // console.log(this.state.wineSearchResults)
     }
     _handleChange = (event) => {

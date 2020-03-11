@@ -129,7 +129,9 @@ export default class EditWineForm extends React.Component {
                 shop: '',
                 label: '',
                 comment: '',
-                rating: 5})
+                rating: 5}, ()=> {
+                    this.props.history.push('/home')
+                })
     }
   
 

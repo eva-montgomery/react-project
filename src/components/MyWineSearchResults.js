@@ -10,7 +10,7 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 
 
-export default function MyWineSearchResults({ myWineSearchResults, handleClearResults }) {
+export default function MyWineSearchResults({ myWineSearchResults, handleClearResults, handleDel, doSearch }) {
     useEffect(() => {
         handleClearResults();
     }, []);
@@ -64,8 +64,11 @@ export default function MyWineSearchResults({ myWineSearchResults, handleClearRe
                     />
                     </Link>
                 
-                <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} />
-
+                <input type="button" value="Delete" className="wine-edit" onClick={async (event)=>{
+                   await handleDel(myWineSearchResults, m.id, i);
+                   doSearch()
+                    
+                } } />
                 </div>
 
             </ul>
