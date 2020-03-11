@@ -7,7 +7,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 import Header from './Header';
@@ -77,9 +78,9 @@ class App extends React.Component {
                   <EditWineForm {...routeProps} />
                 )}
               />
-              {/* <Route path="/profile" >
-                <Profile /> 
-              </Route> */}
+              <Route>
+              <Redirect to ="/"/>
+              </Route>
             </Switch>
                 {/* <WineSearch /> */}
             <Footer />
