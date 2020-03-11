@@ -5,7 +5,7 @@ import {
   } from "react-router-dom"; 
 import StarRatingComponent from 'react-star-rating-component';
 import { actionDelWine } from '../actions';
-
+import MyWineSearchResultsContainer from '../containers/MyWineSearchResultsContainer'
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
@@ -15,7 +15,6 @@ export default function MyWineSearchResults({ myWineSearchResults, handleClearRe
         handleClearResults();
     }, []);
  
-
 
 
     console.log("WINESEARCHRESULTS")

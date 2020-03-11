@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Redirect
+    Redirect, Link
   } from "react-router-dom"; 
 import WineRating from '../WineRating'
 
@@ -101,13 +101,18 @@ export default class EditWineForm extends React.Component {
 
                                 <WineRating className="wine-glasses" onChange={this._handleRating} value={`${rating}`}/>
 
+                                {/* <Link to={{pathname: `/home`}} ></Link> */}
                                 <input type="submit" value="Update" className="wine-submit" />
+                                
+                             
                             </form>
 
                         </div>
+
                      </div>
+
                  </div>
-            )
+            )        
         } else {
             return <Redirect to = "/home" />
         }

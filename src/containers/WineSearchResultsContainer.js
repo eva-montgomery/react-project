@@ -2,9 +2,10 @@
 import {
     connect
 } from 'react-redux';
+import Axios from 'axios';
 
 import WineSearchResults from '../components/WineSearchResults';
-import { actionDelWine, actionResults } from '../actions';
+import { actionDelWine, actionResults, getPersonalWines } from '../actions';
 
 function mapStateToProps(state) {
     return {
@@ -15,13 +16,30 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleDel: (winelist, index) => {
-            dispatch(actionDelWine(winelist, index))
+        // _handleDel: (winelist, index) => {
+        //     dispatch(actionDelWine(winelist, index))
+        // },
+        handleDel: async (winelist, wineId, index) => {
+            console.log(winelist, wineId, index)
+            const deleted = await Axios({
+                method: 'post',
+                url: "/api/delete",
+                data: {
+                    wine_id: wineId
+                }
+            }).then( resp => {
+                return resp.data;
+            });
+            console.log(deleted.deletedWine)
+            if (deleted.deletedWine) {
+                dispatch(actionDelWine(winelist, wineId, index))
+            } 
         },
         handleClearResults: () => {
             dispatch(actionResults([]));
 
-        }
+        },
+
     }
 }
 

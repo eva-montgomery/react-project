@@ -62,8 +62,8 @@ export default class WineList extends React.Component {
         return ( 
             
             <div>
-{/* <div className="rated-wines-title">Search:
-                </div>    */}
+<div className="rated-wines-title">Search:
+                </div>   
                  <MyWineSearch />
                 <div className="rated-wines-title">My rated wines:
                 </div>

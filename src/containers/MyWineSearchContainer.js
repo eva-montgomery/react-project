@@ -8,6 +8,7 @@ import {
     actionMySearch,
     actionMyResults,
     actionMyLoading,
+    actionDelWine
     
 } from '../actions';
 
@@ -38,7 +39,8 @@ function mapDispatchToProps(dispatch) {
            console.log(results.data.results)
             dispatch(actionMyResults(results.data.wineSearch));
             // dispatch(actionLoading(false));
-        }
+        },
+        
     }
 }
 
