@@ -1,19 +1,22 @@
 
 import React, {useEffect} from 'react';
 import {
-    Redirect
+    Redirect, Link
   } from "react-router-dom"; 
 import StarRatingComponent from 'react-star-rating-component';
+import { actionDelWine } from '../actions';
+
 import axios from 'axios';
 axios.defaults.withCredentials = true;
+
 
 export default function MyWineSearchResults({ myWineSearchResults, handleClearResults }) {
     useEffect(() => {
         handleClearResults();
-
     }, []);
+ 
 
-    
+
 
     console.log("WINESEARCHRESULTS")
    return (myWineSearchResults && myWineSearchResults.length > 0) ? myWineSearchResults.map((m, i) => {
@@ -43,7 +46,24 @@ export default function MyWineSearchResults({ myWineSearchResults, handleClearRe
                         starColor="#f00"
                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                 </li>
-                <input type="submit" value="Edit" className="wine-edit" />
+                <Link to={{
+                    pathname: `/edit/${m.id}`,
+                    params: {
+                        wineId: m.id,
+                        wine_name: m.wine_name,
+                        wine_type: m.wine_type,
+                        wine_price: m.wine_price,
+                        wine_store: m.wine_store,
+                        comments: m.comments,
+                        wine_label: m.wine_label,
+                        wine_rating: m.wine_rating
+                    }
+
+                   }}>
+                     <input type="button" 
+                     value="Edit" className="wine-edit" 
+                    />
+                    </Link>
                 
                 <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} />
 
@@ -56,6 +76,4 @@ export default function MyWineSearchResults({ myWineSearchResults, handleClearRe
  null
         }
 
-   
-    
        

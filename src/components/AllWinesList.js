@@ -128,11 +128,7 @@ export default class AllWinesList extends React.Component {
                                         starColor="#f00"
                                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                                 </li>
-                                {/* <input type="submit" value="Edit" className="wine-edit" /> */}
-
                                 <input type="button" className="fav-button" value="❤️" onClick={(event)=> this._handleFavorite(event, m.id)} />
-
-                                {/* <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} /> */}
 
                                 </div>
                             </ul>
