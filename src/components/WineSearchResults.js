@@ -7,6 +7,8 @@ import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
+
+
 export default function WineSearchResults({ wineSearchResults, handleClearResults }) {
     useEffect(() => {
         handleClearResults();
@@ -16,9 +18,11 @@ export default function WineSearchResults({ wineSearchResults, handleClearResult
     console.log("WINESEARCHRESULTS")
    return (wineSearchResults && wineSearchResults.length > 0) ? wineSearchResults.map((m, i) => {
         return (
-            <div key={`wine-${m.wine_name}-${i}`}className="rated-wine-cards"> 
+            <div   
+            key={`wine-${m.wine_name}-${i}`}className="rated-wine-cards"> 
             <ul> 
-                <div>{m.wine_name}
+            <div>
+                <div className="wine-name"> {m.wine_name} </div>
                 <li>Type: {m.wine_type}
                 </li>
                 <li>Price: {m.wine_price}
@@ -39,10 +43,7 @@ export default function WineSearchResults({ wineSearchResults, handleClearResult
                         starColor="#f00"
                         renderStarIcon={() => <span><i class="fas fa-wine-glass-alt"></i></span>} />
                 </li>
-                <input type="submit" value="Edit" className="wine-edit" />
-                
-                <input type="button" value="Delete" className="wine-edit" onClick={(event)=> this._handleDel(event, m.id, i)} />
-
+                <input type="button" className="fav-button" value="❤️" onClick={(event)=> this._handleFavorite(event, m.id)} />
                 </div>
 
             </ul>

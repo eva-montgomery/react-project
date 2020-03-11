@@ -10,15 +10,19 @@ axios.defaults.withCredentials = true;
 export default function MyWineSearchResults({ myWineSearchResults, handleClearResults }) {
     useEffect(() => {
         handleClearResults();
+
     }, []);
 
+    
 
     console.log("WINESEARCHRESULTS")
    return (myWineSearchResults && myWineSearchResults.length > 0) ? myWineSearchResults.map((m, i) => {
         return (
             <div key={`wine-${m.wine_name}-${i}`}className="rated-wine-cards"> 
             <ul> 
-                <div>{m.wine_name}
+            <div>
+                <div className="wine-name"> {m.wine_name} 
+                </div>
                 <li>Type: {m.wine_type}
                 </li>
                 <li>Price: {m.wine_price}
@@ -51,4 +55,7 @@ export default function MyWineSearchResults({ myWineSearchResults, handleClearRe
     }): 
  null
         }
+
+   
+    
        

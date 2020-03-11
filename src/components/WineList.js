@@ -46,47 +46,25 @@ export default class WineList extends React.Component {
         console.log(this.props)
         await this.props.getWines();
         console.log(this.props)
-
-        // const deleted = await axios({
-        //     method: 'post',
-        //     url: "/api/delete",
-        //     data: {
-        //         wine_id: wineId
-        //     }
-        // }).then( resp => {
-        //     return resp.data;
-        // });
     }
     _handleEdit= async (event, wineId) => {
         console.log('we want to redirect')
-        // history.push('/');
-        // return  <Redirect to ="/" > 
-           
-        
-        // const editWine = await axios({
-        //     method: 'post',
-        //     url: "/api/editwines",
-        //     data: {
-        //         wine_id: wineId
-        //     }
-        // }).then( resp => {
-        //     return resp.data;
-        // });
-        // console.log(editWine)
+
     }
 
     render() {
         console.log(this.state)
         console.log(this.props)
         if (this.props.winelist.wines.length === 0) { 
-            return <div className="rated-wines-title">You have not rated any wines yet</div>
+            return <div className="rated-wines-title">You have not rated any wines yet</div> 
         } else { 
         
         return ( 
             
             <div>
-<div className="rated-wines-title">Searchwines:
-                </div>    <MyWineSearch />
+{/* <div className="rated-wines-title">Search:
+                </div>    */}
+                 <MyWineSearch />
                 <div className="rated-wines-title">My rated wines:
                 </div>
                 
