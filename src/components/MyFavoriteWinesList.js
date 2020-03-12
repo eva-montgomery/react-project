@@ -47,7 +47,7 @@ export default class MyFavoriteWines extends React.Component {
         console.log(this.state.winelist)
         if (this.state.winelist.length === 0) { 
             return <div> <div className="rated-wines-title">You have not added any wines to your favorites yet</div>
-            <p>Click here to view all rated wines and select your favirites by clicking the ❤️</p></div>
+            <div className="main-content">Click here to view all rated wines and select your favirites by clicking the ❤️</div></div>
         } else {
     
             return ( 

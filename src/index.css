@@ -21,22 +21,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(/images/watercolour-1755757_1920.jpg);
   background-size: cover;
-  /* background-repeat: no-repeat; */
-
-  /* background-position: center center;
-  background-attachment: fixed; */
-
-  /* background-repeat: no-repeat; */
-  /* position: relative; */
+  background-attachment: scroll;
+  position: relative;
   flex: 1;
-   /* background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
 }   
 
 
@@ -161,7 +153,9 @@ code {
   margin-left: 50px;
   margin-right: 50px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
+  padding-top: 10px;
+  text-align: center;
   justify-content: center;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace; 
@@ -423,7 +417,7 @@ ul {
   left: 0;
   bottom: 0;
   overflow: hidden;
-  height: 80px;
+  height: 60px;
   width: 100%;
   position: scroll;
 
@@ -445,9 +439,18 @@ ul {
     background-position: center;
   }
 
+.header {
+  position: sticky;
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+}
  .header h1{
    font-size: 38px;
-  
+ }
+
+ .main-content {
+   font-size: 18px;
  }
  .footer {
   font-size: 14px;
@@ -457,17 +460,18 @@ ul {
   background-color: rgb(235, 121, 121);
   padding-top: 10px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; flex-shrink: 0;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
-  height: 80px;
-  width: 100%;
-  position: scroll;
-
+    monospace;   flex-shrink: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    height: 80px;
+    width: 100%;
+    position: scroll;
+ 
 
 
  }
+
  .content-container {
   height: 100%;
   width: 100%;
@@ -487,7 +491,9 @@ ul {
     background-attachment: fixed;
     background-position: center;
   }
-
+  .main-content {
+    font-size: 18px;
+  }
  .header h1{
    font-size: 38px;
   
@@ -501,15 +507,17 @@ ul {
   padding-top: 10px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;   flex-shrink: 0;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
-  height: 80px;
-  width: 100%;
-  position: scroll;
-
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    height: 80px;
+    width: 100%;
+    position: scroll;
 
  }
+ .main-content {
+  font-size: 20px;
+}
  .content-container {
   height: 100%;
   width: 100%;
@@ -517,6 +525,9 @@ ul {
 }
 
 @media only screen and (min-width: 1200px) {
+  html {
+    height: 100%;
+  }
   body {
     background-image: url(/images/watercolour-1755757_1920.jpg);
     /* background-size: cover;
@@ -530,29 +541,35 @@ ul {
 
  .header h1{
    font-size: 38px;
-  
  }
+
+ .main-content {
+  font-size: 20px;
+}
  .footer {
   font-size: 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: rgb(235, 121, 121);
-  padding-top: 10px;
+  padding-top: 5px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;  flex-shrink: 0;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
-  height: 80px;
-  width: 100%;
-  position: scroll;
-
+    monospace;   flex-shrink: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    height: 80px;
+    width: 100%;
+    position: fixed;
  }
  .content-container {
   height: 100%;
   width: 100%;
   flex: 1;
+}
+.wine-list-container {
+  padding-bottom: 80px;
 
 }
+
 }

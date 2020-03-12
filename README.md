@@ -75,19 +75,20 @@ The user account/profile should include:
 ![Screen Shot 2020-03-11 at 7 33 40 PM](https://user-images.githubusercontent.com/55462764/76473733-ce600200-63cf-11ea-9163-1d960e2e9686.png)
 
 - Form to add a new wine
-![Screen Shot 2020-03-11 at 7 35 36 PM](https://user-images.githubusercontent.com/55462764/76473738-d324b600-63cf-11ea-9450-fc5641d4f3ac.png)
-
-- My rated wines
 ![Screen Shot 2020-03-11 at 7 34 23 PM](https://user-images.githubusercontent.com/55462764/76473746-dae45a80-63cf-11ea-9a38-5a1c42f7836d.png)
 
-- Edit a wine
-![Screen Shot 2020-03-11 at 7 36 38 PM](https://user-images.githubusercontent.com/55462764/76473753-e041a500-63cf-11ea-8902-e6d5e6e1c684.png)
-
-- All rated wines
+- My rated wines
 ![Screen Shot 2020-03-11 at 7 34 58 PM](https://user-images.githubusercontent.com/55462764/76473755-e2a3ff00-63cf-11ea-97b7-fe8d6276cbca.png)
 
-- My favorites
+- Edit a wine
 ![Screen Shot 2020-03-11 at 7 35 14 PM](https://user-images.githubusercontent.com/55462764/76473764-e8014980-63cf-11ea-8acc-bb79d6683533.png)
+
+- All rated wines
+![Screen Shot 2020-03-11 at 7 35 36 PM](https://user-images.githubusercontent.com/55462764/76473738-d324b600-63cf-11ea-9450-fc5641d4f3ac.png)
+
+- My favorites
+![Screen Shot 2020-03-11 at 7 36 38 PM](https://user-images.githubusercontent.com/55462764/76473753-e041a500-63cf-11ea-8902-e6d5e6e1c684.png)
+
 
 
 ## Future features include:

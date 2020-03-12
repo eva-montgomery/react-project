@@ -27,11 +27,10 @@ export default class WineForm extends React.Component {
         <p>Welcome to Wine-O-Clock - your personal wine rating application!</p> 
        
         <p>Add the wines you bought to the form below and give them a wine-rating from 1-5, so every time you buy wine, you can look in your app and check if you have already tried it!
-        <p>To view all rated wines by all users, you can simply click 
-        <a href="/wines"> here</a> See a wine you want to try? Add it to your favorites list.</p>
+        <p>To view all rated wines by all users, you can go to "All rated wines" in the navigation bar. See a wine you want to try? Add it to your favorites list.</p>
         </p>
-        <h4>And remember: It's Wine-O-Clock somewhere and life is too short to drink shitty wine! Cheers!</h4>
-        <p>💜 Please donate an amount of what you saved by only buying good wine to an animal rescue 💜
+        <h4>And remember: It's Wine-O-Clock somewhere and life is too short to drink shitty wine! Cheers!</h4><br></br>
+        <p>💜 Please donate an amount of what you saved, by only buying good wine, to an animal rescue 💜
         </p>
       
       </div>
