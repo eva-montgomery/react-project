@@ -18,8 +18,8 @@ export default function WineSearchResults({ wineSearchResults, handleClearResult
     console.log("WINESEARCHRESULTS")
    return (wineSearchResults && wineSearchResults.length > 0) ? wineSearchResults.map((m, i) => {
         return (
-            <div   
-            key={`wine-${m.wine_name}-${i}`}className="rated-wine-cards"> 
+         
+            <div key={`wine-${m.wine_name}-${i}`}className="rated-wine-cards"> 
             <ul> 
             <div>
                 <div className="wine-name"> {m.wine_name} </div>

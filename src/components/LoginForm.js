@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Redirect
+    Redirect, Link
   } from "react-router-dom"; 
 
 
@@ -46,7 +46,7 @@ export default class LoginForm extends React.Component {
                     />   <br></br> <br></br>
                 <input type="submit" value="Sign in" className="login-submit" />
        <br></br> <br></br>
-                <div>Don't have an account? <a href="/signup" id="signup">Sign up here</a></div>
+                <div>Don't have an account? <Link to="/signup" id="signup">Sign up here</Link></div>
 
                 </form>
             </div>

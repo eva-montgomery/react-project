@@ -86,10 +86,10 @@ export default class AllWinesList extends React.Component {
                 <div className="main-content">Take a look at how other users rated wines.</div>
                 <div className="main-content">See a wine you like?</div>
                 <div className="main-content">Click the ❤️ to add a wine to your favorites!</div>
-                <WineSearch />
                 <div className="rated-wines-title">All rated wines: </div>
                 </div>
                 </div>
+                <div><WineSearch /></div>
 
                 {/* <SearchBar 
                     handleChange={this._setSearchText}
@@ -103,7 +103,8 @@ export default class AllWinesList extends React.Component {
 
            
                             <ul> 
-                                <div>  <div className="wine-name" key={i}>{m.wine_name}   </div>
+                                <div>  
+                                    <div className="wine-name" key={i}>{m.wine_name}   </div>
 
 
                                 <li key={i}>Type: {m.wine_type}
