@@ -49,6 +49,7 @@ class App extends React.Component {
           <Router>
             <NavContainer />
             <Switch>
+              <div className="container-box">
               <Route path="/" exact>
                 <LoginForm /> 
               </Route>
@@ -81,6 +82,7 @@ class App extends React.Component {
               <Route>
               <Redirect to ="/"/>
               </Route>
+              </div>
             </Switch>
                 {/* <WineSearch /> */}
             <Footer />

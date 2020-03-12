@@ -161,11 +161,15 @@ code {
   monospace; 
 /* font-size: larger; */
 }
+.container-box {
+  margin-bottom: 100px;
+}
 
 .wine-form-container {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 60px
 }
 
 .profile-information {
